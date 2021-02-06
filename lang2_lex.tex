@@ -1,0 +1,249 @@
+% --- COMMANDS ---
+\makeatletter
+\define@key{entry}{nbm}[]{\def\entry@nbm{#1}}
+\define@key{entry}{pos}[]{\def\entry@pos{#1}}
+\define@key{entry}{etym}[]{\def\entry@etym{#1}}
+\define@key{entry}{note}[]{\def\entry@note{#1}}
+
+\setkeys{entry}{nbm,pos,etym,note}
+
+\newcommand{\entry}[3][]{%
+\begingroup%
+\setcounter{sense}{1}%
+\setkeys{entry}{#1}%
+\par \begin{minipage}{\columnwidth}%
+	% \rz{#2}%
+	\rzbf{#2}%
+	\enskip {\footnotesize \ifdefempty{\entry@nbm}{}{• \entry@nbm{} nbm.} \ifdefempty{\entry@pos}{}{• \entry@pos}} \\%
+	\ifdefempty{\entry@note}{}{\enskip {\footnotesize \textit{note:} \entry@note} \\}%
+	\ifdefempty{\entry@etym}{}{\enskip {\footnotesize ← from \entry@etym} \\}%
+	#3\vspace{12pt}%
+\end{minipage}%
+\endgroup%
+}
+
+% linear (digital-style) definitions
+%\newcounter{sense}
+%\NewDocumentCommand{\sense}{o}{%
+%\ifnum\the\value{sense}>1\\\fi%
+%	\textbf{\arabic{sense}:}\enskip%
+%	\IfNoValueTF{#1}{}{\textit{#1}}%
+%\stepcounter{sense}%
+%}
+
+% cramped (print-style) definitions
+\newcounter{sense}
+\NewDocumentCommand{\sense}{o}{%
+\ifnum\the\value{sense}>1\enskip\fi%
+	\textbf{\arabic{sense}}\enskip%
+	\IfNoValueTF{#1}{}{\textit{#1}}%
+\stepcounter{sense}%
+}
+
+%\define@key{mean}{use}[]{\def\mean@use{#1}}
+%\define@key{mean}{jrgn}[]{\def\mean@jrgn{#1}}
+%
+%\setkeys{mean}{use,jrgn}
+
+%\newcommand{\sense}[1][]{%
+%\begingroup%
+%\setkeys{mean}{#1}%
+%\ifnum\the\value{sense}>1\\\fi%
+%	\textbf{\arabic{sense}:}\enskip%
+%	\ifdefempty{\mean@jrgn}{}{\textsc{\mean@jrgn} \ifdefempty{\mean@use}{}{\enskip}}%
+%	\ifdefempty{\mean@use}{}{\textit{\mean@use}}%
+%\stepcounter{sense}%
+%\endgroup%
+%}
+
+\newenvironment{dic}[1]{{\centering \addsec{#1}} \begin{multicols}{2}}{\end{multicols}}
+
+\makeatother
+
+\pagelayout{margin}
+\setchapterpreamble[u]{\margintoc}
+\chapter{Lexicon}
+A \langname{}-to-English dictionary is provided below.
+
+\section*{How to use}
+Entries for lexical items are listed by their spelling in generic form, ignoring morphological alterations. Derived words are listed as separate entries, but their source word is given. On the other hand, idiomatic or fixed expressions are given under the lexical item.
+
+Morphophonological information, such as \emph{nebami} vowels, underlying form, or irregular alterations, is listed when pertinent. Furthermore, senses that are specific to a certain word form are given in \textit{italics}, where as sense that are specific to a field or context are given in \textsc{\textit{small caps}}.
+
+\section*{Examples}
+Examples are generally given as simple declarative sentences, avoiding where possible movement due to focus fronting. Typically examples are chosen to provide context or illustrate usage notes for a definition.
+
+\pagelayout{wide}
+\setlength{\columnsep}{30pt}
+
+% ===== A =====
+\begin{dic}{A}
+\entry[pos=n.,etym=Classical Cape \fz{dahēs} “pee”]{adahę́s}{\sense[uncountable] sand; cf. \emph{countable} \rz{sifa} “grain of sand” \sense[idiom.] citizens (of a nation, state), subjects, followers (of a leader, celebrity) \sense[\rz{ez-adahę́s}] the public, the people of a place: \rzit{Natra ez-adahę́s} “the Natran indigenous peoples”}
+\entry[pos=n.,etym=Classical Cape \fz{gamrī}]{agąrę́}{\sense[\sc sailing] star}
+\entry[pos=n.,etym=Classical Cape \fz{gamrka} “navigator”]{agątka}{\sense cartographer}
+\entry[pos=n.]{ahka}{\sense 2 feet}
+\entry[pos=v. tr.,etym=redup. of \rz{akvat}]{akakvat}{\sense (in a game) tag}
+\entry[pos=n., etym=\rz{akakvat} + \rz{-zi}]{akakvazi}{\sense tagplayer (usually professional)}
+\entry[pos=n.]{almani}{\sense wave \sense[idiom.] influence \sense[\sc politics] soft power}
+\entry[pos=n.,etym=Classical Cape \fz{as} “man”]{as}{\sense foreigner}
+\entry[pos=n.]{assoi}{\sense weeb for Classical Cape culture}
+\end{dic}
+
+% ===== Ą =====
+\begin{dic}{Ą}
+\entry[pos=n.,etym=\rz{ǫkas} “payment” + \rz{-suy}]{ąkassuy}{\sense bank}
+\end{dic}
+
+% ===== C =====
+\begin{dic}{C}
+\entry[pos=v. tr.]{cam}{\sense put (smn.) to sleep \sense[refl.] go to bed \sense[mediopassive] nap, snooze: \rzit{piran picik camnat tę-kamc im-pebar} “the child napped after school.” \sense[idiom.] calm (smn.) down, soothe \sense[coll.] bore (an audience): \rzit{ah-turya cad nakraran orran im-remaczi} “the comedian's subpar performance last night bored me.”}
+\end{dic}
+
+% ===== E =====
+\begin{dic}{E}
+\entry[pos=n.]{emas}{\sense[ntr.] plot of land}
+\entry[pos=adj.]{esyi}{\sense good \sense correct, appropriate}
+\end{dic}
+
+% ===== Ę =====
+\begin{dic}{Ę}
+\entry[pos=v.,note=often \rz{ęrrat} for younger speakers]{ęrvat}{\sense }
+\end{dic}
+
+% ===== F =====
+
+% ===== H =====
+\begin{dic}{H}
+\entry[pos=n.]{hakra}{\sense battle, skirmish \sense[pl.] conflict, campaign \sense[pl.] semester, trimester, school year}
+\entry[pos=v. tr., etym=redup. of \rz{husar} “shout”]{hassusar}{\sense (esp. of a leader) exalt} % \sense[adj. → \rzit{hassusarem}] famous, well-known
+\entry[pos=n.]{helas}{\sense[ntr.] mountain}
+\entry[pos=n.]{hora}{\sense wrist}
+\entry[pos=v. tr.]{husar}{\sense shout at \sense praise, compliment}
+\end{dic}
+
+% ===== I =====
+\begin{dic}{I}
+\entry[pos=n.]{ihaiha}{\sense donkey, mule \sense[adj. pej.] dumb}
+\entry[pos=n.]{isyus}{\sense[ntr.] shield \sense[\textsc{culinary} ntr.] apron \sense[\textsc{military} pl.] elite, highly trained soldiers; royal guard, special forces, black ops: \rzit{pursę́ im-akąssuy ksarac isyuzzar} “the special forces respond to bank robberies.”}
+\end{dic}
+
+% ===== K =====
+\begin{dic}{K}
+\entry[pos=n.,note=underlying {/kamat͡s/,} often {[kams]} but {[kad͡z(ə)]} for some speakers]{kamc}{\sense back; the part of the body opposite the face below the neck and above the thigh, including the buttocks \sense[\rz{tę-kamc im}] after:}
+\entry[pos=n.,etym=redup. of \rz{kęsa} “soldier”]{kagęsa}{\sense battalion, unit \sense (as a branch of the military) army}
+\entry[pos=n.,etym=analogy with \rz{kagęsa} and \rz{kę́stapa}]{kagę́stapa}{\sense (as a branch of the military) navy}
+\entry[pos=n.]{kęsa}{\sense soldier \sense[\sc academic] (of a literary work) protagonist, hero \sense[archaic] slave, conscript}
+\entry[pos=n.,etym=\rz{kat} “pull” + \rz{-akz}]{katakz}{\sense[\rz{katakz im-saycezzar}] butterfly effect}
+\entry[pos=n.,etym=\rz{kęsa} “soldier” + \rz{-suy}]{kąsasuy}{\sense high-ranking general \sense (with specifier) military officer: \rzit{kąsasuy ???} “field officer,” \rzit{kąsasuy ???} “medical officer”}
+\entry[pos=n.,etym=\rz{kęsa} “soldier” and \rz{taspa} “sea”]{kę́stapa}{\sense navy officer, sailor (on a military ship)}
+\entry[nbm=e,pos=v. tr.]{kęstat}{\sense lead \sense[\sc military] be in command of: \rzit{nassoin kąstecik su kagęsa su kagę́stapa} “the king commands both army and navy.” \sense train (an apprentice) in \rzit{tę} a skill: \rzit{tę-caradá kąstettik rat lalasa} “auntie's teaching me to sew.” \sense formally teach, school (a student) in \rzit{ez} a discipline: \rzit{rabahan picik kąstetnat ez-latya} “the minister was brought up in the faith.” \sense[pej.] indoctrinate}
+\entry[pos=n.,etym=partial reduplication of \rz{pira} “child”]{kipira}{\sense adolescent; someone around or older than 8 years old who has not yet been ritually scarred}
+\entry[pos=n.]{kotus}{\sense divinity}
+\entry[pos=n.,etym=\rz{kotus} + \rz{-soi}]{kotussoi}{\sense body part; soul; the perfect implements wielded by an imperfect mind}
+\entry[pos=v. in.]{kirǫyam}{\sense delve \sense descend deeper with forward motion into \rz{osc} some terrain (water, caves) to search for \rz{tę} something: \rz{tę-rasar kirąyamik osc-taspa} “he's swimming into the sea to search for rare fish.” \sense[\sc politics] conduct an investigation into \rz{osc} a topic: \rz{osc lar kirąyamik isyusan ocoan im nassoi kęstat ezzar vęci} “the special tribune is investigating the king's use of mercenary forces.” \sense[\rz{kirǫyam osc saycer}] wish for good luck for \rz{tę} someone: \rz{tę-af kirǫyam osc saycer tę-makra im-hakra} “good luck this semester!”}
+\entry[pos=v. tr.]{ksarat}{\sense[\sc military] handle, respond to}
+\entry[pos=n.]{ksofa}{\sense deciduous tree \sense growth, development (of the mind, socially)}
+\end{dic}
+
+% ===== L =====
+\begin{dic}{L}
+\entry[pos=n.]{lalasa}{\sense[\gsc{kinship}] great aunt \sense godmother \sense[affectionate] mentor}
+\entry[pos=n.]{latya}{\sense religion}
+\end{dic}
+
+% ===== M =====
+\begin{dic}{M}
+\entry[pos=n.]{makra}{\sense chest; the part of the body below the neck and above the groin, including the shoulders and upper arms}
+\entry[pos=n.]{mas}{\sense[ntr.] hour \sense[\rz{tę-kamc im-mas} adv.] in an hour: }
+\entry[nbm=o,pos=n.]{metka}{\sense rounded semi-circle hollow container; bowl, basket, vessel  \sense measure word for crops or farm animals}
+\end{dic}
+
+% ===== N =====
+\begin{dic}{N}
+\entry[pos=n.,etym=\rz{nakrat} “” + \rz{-r}]{nakrar}{\sense performance (on stage)}
+\entry[pos=n.,etym=\rz{naf} “gem” + \rz{-soi}]{nassoi}{\sense king}
+\entry[pos=n.,etym=\rz{nassoi} “king” + \rz{-j} fossilized collective suffix,note=often {[nəsːojd͡z(ə)]}]{nassoij}{\sense aristocrat, bourgeois \sense[archaic] royal court, royal advisors}
+\entry[pos=n.]{Natra}{\sense the mountain range that runs down the middle of the continent}
+\entry[pos=n.,etym=Old East Cape]{nęcta}{\sense[\gsc{medical}] lung}
+\entry[pos=n.]{nik}{\sense flat surface, plane \sense[adj.] flat}
+\entry[pos=v. in.,nbm=o,etym=\rz{nik} “flat” + \rz{hor} “craft”]{nikhar}{\sense to create a map of \rzit{ez} a region}
+\entry[pos=n.,etym=\rz{nikhar} “make maps” + \rz{rabaha} “minister”]{níkharkah}{\sense geography \sense[archaic] cartography}
+\entry[pos=n.,etym=\rz{níkharkah} “geography” + \rz{-soi}]{nikhorkassoi}{\sense geographer \sense[archaic] cartographer}
+\end{dic}
+
+% ===== O =====
+\begin{dic}{O}
+\entry[pos=adj.,nbm=o,note=underlying /ot͡soa/]{oca}{\sense deep \sense (of people) tall and thin, wiry, spindly}
+\entry[pos=n.,nbm=e]{ocza}{\sense two}
+\entry[pos=n., nbm=o]{okva}{\sense valley}
+\entry[pos=adj.]{orra}{\sense dry \sense (of food) stale \sense (of man-made objects) subpar, fragile}
+\entry[pos=n.,nbm=o,etym=Classical Cape]{armę́}{\sense ocean}
+\entry[pos=v. in.]{ossat}{\sense (of plants) to grow in size \sense (of people) to develop emotionally, intellectually}
+\end{dic}
+
+% ===== Ǫ =====
+\begin{dic}{Ǫ}
+\entry[pos=n.]{ǫkas}{\sense[ntr.] payment}
+\end{dic}
+
+% ===== P =====
+\begin{dic}{P}
+\entry[pos=n.]{pebar}{\sense garden \sense orchard \sense primary school}
+\entry[pos=n.]{pira}{\sense child; someone around or under 8 years old who hasn't yet been brought fishing}
+\entry[pos=n.]{polars}{\sense evergreen tree}
+\entry[pos=n.,etym=Old Cape \fz{purcī} “plan”]{pursę́}{\sense robbery, heist}
+\end{dic}
+
+% ===== R =====
+\begin{dic}{R}
+\entry[pos=n.]{rabaha}{\sense[\sc religion] minister \sense[archaic] ministry}
+\entry[pos=n.,nbm=e,etym=Old East Cape \fz{raxir} “fish”, note=sometimes spelled {\rz{raxir}, pronounced {[ɹaʃɛɹ]}, in elite circles or when exaggerating}]{rasar}{\sense meat (food) \sense[archaic] fish delicacy}
+\entry[pos=n.]{recam}{\sense ritual scar made by a ceremonial blade on the upper arm near the shoulder of the dominant hand (historically on only the right arm) which symbolizes adulthood; usually done around the age of 16}
+\entry[pos=n.,etym=\rz{recam} + \rz{-c}]{recaj}{\sense adulthood \sense the human condition, humanity, humanness}
+\entry[pos=n.]{retus}{\sense[ntr.] blade \sense[\sc geography] canal}
+\entry[pos=n., etym=\rz{remat} “” + \rz{-zi}]{remaczi}{\sense comedian}
+\end{dic}
+
+% ===== S =====
+\begin{dic}{S}
+\entry[pos=n.]{samni}{\sense[\sc geography] horn}
+\entry[pos=n.,etym=Classical Cape \fz{sapa} “hunting dog”]{sapa}{\sense hunter}
+\entry[pos=n.,etym=Old East Cape]{saska}{\sense[\gsc{medical}] heart}
+\entry[pos=v. in.]{sayenar}{\sense be ignorant, uninformed, unknowledgeable about \rzit{ez} a topic: \rzit{ sayanarnat ez-latya tahątresik asan ah-mas esyi} “ignorant of the religion, the foreigner didn't pray at the correct hour.” }
+\entry[pos=n., etym=\rz{secyat} “shine” + \rz{-r}]{secyar}{\sense celestial object: sun, moon, star \sense[\rz{sayceran im-turya}] the Moon \sense[\rz{saycer tea}] moon, satellite}
+\entry[pos=n., etym=\rz{secyar} “star” + \rz{rabaha} “minister”]{sécyarkah}{\sense astronomy}
+\entry[pos=n.,etym=\rz{sécyarkah} “astronomy” + \rz{-soi}]{sacyerkassoi}{\sense astronomer}
+\entry[pos=v. tr.,note=often shortened to \rz{sem}]{sesam}{\sense say (smth.)}
+\entry[pos=n.]{sifa}{\sense[countable] grain of sand \sense a tiny portion of \rzit{im} something \sense[name] girl given name}
+\end{dic}
+
+% ===== T =====
+\begin{dic}{T}
+\entry[pos=v. in.,nbm=ę]{tahąt}{\sense stretch (one's limbs) \sense reach for \rzit{???} something above oneself \sense aspire to \rzit{???} an unreachable goal: \rzit{... akakvazi ... oca ...} “he aspired to be a tagplayer, but he wasn't tall enough.” \sense[\sc religion] pray}
+\entry[pos=n.]{taspa}{\sense sea}
+\entry[pos=n.]{tǫsra}{\sense adult; one who has been ritually scarred with \rzit{recam}; someone around or older than 16}
+\entry[pos=adj.]{tea}{\sense dark color: blue, black, violet}
+\entry[pos=n.]{tesa}{\sense shore, shoreline (near the sand) \sense hairline}
+\entry[pos=n.]{turya}{\sense night}
+\end{dic}
+
+% ===== U =====
+\begin{dic}{U}
+\entry[pos=n.,etym=unknown substrate language]{ukrak}{\sense shore near volcanic rock}
+\end{dic}
+
+% ===== V =====
+\begin{dic}{V}
+\entry[pos=n.]{vassa}{\sense tide \sense[idiom.] (of an event) historical, of great significance}
+\entry[pos=n.]{vęci}{\sense mercenary, hired blade \sense[adj.] greedy \sense[pej.] brat, unruly child \sense[\rz{satat vęci} pej.] throw a temper tantrum: \rzit{vęci satacik piran ihaihan af} “your dumb kid is throwing a temper tantrum.”}
+\end{dic}
+
+% ===== Y =====
+\begin{dic}{Y}
+\entry[pos=n.,etym=\rz{yifat} “punish” + \rz{-r}]{yifar}{\sense robbery, theft (usually of small items)}
+\end{dic}
+
+% ===== Z =====
+\begin{dic}{Z}
+\entry[pos=n.,note=usually in proximal form]{zalmi}{\sense the Sun}
+\end{dic}

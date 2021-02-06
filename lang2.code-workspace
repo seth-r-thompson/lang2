@@ -1,0 +1,47 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"editor.fontFamily": "Iosevka, Hack, Consolas, 'Courier New', monospace",
+		"editor.fontSize": 13,
+		"editor.tokenColorCustomizations": {
+			"textMateRules": [
+				{
+					"scope": [
+						"support.function"
+					],
+					"settings": {
+						"foreground": "#ff9c08"
+					}
+				},
+				{
+					"scope": [
+						"support.function.section.latex"
+					],
+					"settings": {
+						"foreground": "#5cb4fc",
+						"fontStyle": "bold"
+					}
+				},
+				{
+					"scope": [
+						"markup.bold"
+					],
+					"settings": {
+						"fontStyle": "bold"
+					}
+				}
+			]
+		},
+		"files.exclude": {
+			"{**.toc,**.aux,**.bcf,**.log,**.mw,**.run.xml,**.synctex.gz}": true,
+			"**.otf": true,
+			"**/lib-san-edit": true
+		},
+		"editor.wordWrap": "on",
+		"python.pythonPath": "C:\\Python27\\python.exe"
+	}
+}

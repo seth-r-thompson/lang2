@@ -1,0 +1,150 @@
+\documentclass[fontsize=12pt,twoside=false,numbers=noenddot]{kaobook}
+
+\usepackage{styles/mdftheorems}
+\usepackage{styles/environments}
+\usepackage{styles/kaobiblio}
+\usepackage{fontspec}
+\usepackage{expex}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[utf8]{inputenc}
+
+%--- METADATA ---%
+\newcommand{\langname}{\textbf{lang2}}
+\title[A Grammar of \langname{}]{\huge \langname{}}
+\subtitle{grammar of a constructed language}
+\author[kilenc]{\large Seth Thompson \\ \small \textit{aka} kilenc}
+\date{\small \today}
+
+%--- FORMATTING ---%
+% font
+\setmainfont{LibertinusSans}[Extension = .otf , Path = ./ , UprightFont = *-Regular-Custom , BoldFont = *-Bold-Custom , ItalicFont = *-Italic-Custom]
+% \setmainfont{LibertinusSans}[Extension = .otf , Path = ./ , UprightFont = *-Regular-Custom , BoldFont = *-Bold-Custom , ItalicFont = *-Italic-Custom , BoldItalicFont = *-Regular-Custom ,BoldItalicFeatures={FakeBold=3,FakeSlant=0.3} ]
+% \setmainfont{Brill Roman} % this might be better than Libertinus but the numbers aren't great
+% \setmainfont{Libertinus Serif}
+\setmonofont{Iosevka}[SizeFeatures = {Size = 10}]
+\renewcommand{\bf}{\bfseries}
+
+% graphics
+\graphicspath{{/}{images/}} % image paths
+
+% links
+\hypersetup{colorlinks=true, linkcolor=black, urlcolor=blue}
+
+% gloss
+\definelingstyle{gloss}{glstyle=nlevel, everyglpreamble=\bfseries\color{BrickRed}, aboveglftskip=-8pt, belowglpreambleskip=-8pt, aboveexskip=0pt, belowexskip=-4pt}
+\definelingstyle{widegloss}{glstyle=nlevel, everyglpreamble=\bfseries\color{BrickRed}, aboveglftskip=0pt,belowglpreambleskip=0pt, aboveexskip=8pt, belowexskip=4pt}
+\lingset{lingstyle=gloss}
+
+\newenvironment{gloss*}{
+	\begin{minipage}{164.6mm}%
+	\pex[lingstyle=widegloss]%
+}{%
+	\xe%
+	\end{minipage}%
+}%
+
+%--- COMMANDS ---%
+% romanization
+% maybe I should go for MidnightBlue?
+% and \fz was \textcolor[HTML]{008086}
+\newcommand{\rz}[1]{\textcolor{BrickRed}{\textit{#1}}}
+\newcommand{\rzbf}[1]{\textcolor{BrickRed}{\textbf{#1}}}
+\newcommand{\rzit}[1]{\textcolor{BrickRed}{\textit{#1}}}
+\newcommand{\fz}[1]{\textcolor[HTML]{008086}{\textbf{#1}}}
+\newcommand{\rzbrkt}[1]{\textcolor{BrickRed}{⟨\textbf{#1}⟩}}
+
+% glossing shortcuts
+\newcommand{\gsc}[1]{\textsc{#1}}
+\newcommand{\gbs}{\textbackslash}
+\newcommand{\gtd}{\char“~}
+
+% ipa shortcut
+\newcommand{\textss}[1]{\textsuperscript{#1}}
+
+% ref shortcuts
+\newcommand{\smoyd}[2]{\trailingcitation{\footnotesize \href{#1}{(\gsc{5moyd \#{}#2})}}}
+
+% chapter shortcut
+\newcommand{\chaptertoc}[1]{\setchapterpreamble[u]{\margintoc}\chapter{#1}}
+
+\begin{document}
+
+\frontmatter % Denotes the start of the pre-document content, uses roman numerals
+
+\KOMAoptions{twoside=semi}
+\maketitle
+\KOMAoptions{twoside=false}
+
+% toc formatting
+\setlength{\textheight}{23cm} % Manually adjust the height of the ToC pages
+\etocstandarddisplaystyle % "toc display" as if etoc was not loaded
+\etocstandardlines % toc lines as if etoc was not loaded
+
+\tableofcontents % Output the table of contents
+
+\pagelayout{margin}
+\setchapterstyle{kao} % Choose the default chapter heading style
+
+\setchapterpreamble[u]{\margintoc}
+\chapter{Introduction}
+\section{Origins}
+\langname{} is an \emph{a priori} artlang originally conceived to fulfill a speedlang challenge, then modified to handle a relay, then finally molded into its own project. It aims to be smarter about phonology, morphosyntax, pragmatics and semantics than the average conlang through careful and extensive  study of literature. When naturalism conflicts with aesthetic, however, aesthetic will be prioritized.
+
+\section{Goals}
+A primary way to grow this language and develop new ideas will be through translation of poetry and scientific journals. I hope that these will push the limits of my syntactical rules while also developing an interesting corpus. I'll also try to use \gsc{5moyd}s and hopefully at some point a journal to expand my ability to `speak' the language and get an intuitive sense for what constructions it prefers.
+
+As I develop this conlang, my goals will be to prioritize analytic constructions (like periphraxis) over morphological ones, write in-depth documentation of how information structure manifests in the language (especially with regards to syntax), and ...
+
+\section{Lore}
+\langname{} is set in a worldbuilding project I create as a hobby. The language is an isolate spoken on the eastern coast of a penininsula, once the language of citystates and now a common language throughout a number of coastal countries. It is heavily influenced by East Cape, the \textit{de jure} language of the peninsula. The world the speakers know is analogous to our 1930s.
+
+\mainmatter % Denotes the start of the main document content, resets page numbering and uses arabic numbers
+
+\pagelayout{wide}
+\part{Phonology}
+\pagelayout{margin}
+
+\chaptertoc{Overview}
+... some stuff about typology here ...
+
+\input{lang2_phono.tex}
+
+\pagelayout{wide}
+\part{Morphosyntax}
+\pagelayout{margin}
+
+\chaptertoc{Overview}
+... some stuff about typology here ... there should also be a section on fronting etc ...
+
+\section{Word classes}
+There are 3 primary word classes: nouns, verbs, and adpositions. There are also a limited number of adjectives and discourse particles.
+
+\input{lang2_nouns.tex}
+
+\input{lang2_verbs.tex}
+
+\input{lang2_other_pos.tex}
+
+\input{lang2_syntax.tex}
+
+% \pagelayout{plain}
+% \part{Pragmatics}
+% \pagelayout{margin}
+
+\pagelayout{plain}
+\part{Appendix}
+\pagelayout{margin}
+
+\appendix % From here onwards, chapters are numbered with letters, as is the appendix convention
+
+\input{lang2_lex.tex}
+
+\backmatter % Denotes the end of the main document content
+\setchapterstyle{plain} % Output plain chapters from this point onwards
+%\pagelayout{wide}
+
+%\printbibliography[heading=bibintoc, title=References]
+
+\end{document}
