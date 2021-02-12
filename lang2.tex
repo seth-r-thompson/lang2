@@ -1,10 +1,8 @@
 \documentclass[fontsize=12pt,twoside=false,numbers=noenddot]{kaobook}
 
-\usepackage{styles/mdftheorems}
-\usepackage{styles/environments}
-\usepackage{styles/kaobiblio}
-\usepackage{fontspec}
+\usepackage{styles/environments} % for the TODO boxes
 \usepackage{expex}
+\usepackage{fontspec}
 \usepackage{booktabs}
 \usepackage{caption}
 \usepackage{subcaption}
@@ -20,11 +18,7 @@
 %--- FORMATTING ---%
 % font
 \setmainfont{LibertinusSans}[Extension = .otf , Path = ./ , UprightFont = *-Regular-Custom , BoldFont = *-Bold-Custom , ItalicFont = *-Italic-Custom]
-% \setmainfont{LibertinusSans}[Extension = .otf , Path = ./ , UprightFont = *-Regular-Custom , BoldFont = *-Bold-Custom , ItalicFont = *-Italic-Custom , BoldItalicFont = *-Regular-Custom ,BoldItalicFeatures={FakeBold=3,FakeSlant=0.3} ]
-% \setmainfont{Brill Roman} % this might be better than Libertinus but the numbers aren't great
-% \setmainfont{Libertinus Serif}
-\setmonofont{Iosevka}[SizeFeatures = {Size = 10}]
-\renewcommand{\bf}{\bfseries}
+\setmonofont{Iosevka}[Scale=MatchLowercase]
 
 % graphics
 \graphicspath{{/}{images/}} % image paths
@@ -32,10 +26,32 @@
 % links
 \hypersetup{colorlinks=true, linkcolor=black, urlcolor=blue}
 
-% gloss
-\definelingstyle{gloss}{glstyle=nlevel, everyglpreamble=\bfseries\color{BrickRed}, aboveglftskip=-8pt, belowglpreambleskip=-8pt, aboveexskip=0pt, belowexskip=-4pt}
-\definelingstyle{widegloss}{glstyle=nlevel, everyglpreamble=\bfseries\color{BrickRed}, aboveglftskip=0pt,belowglpreambleskip=0pt, aboveexskip=8pt, belowexskip=4pt}
-\lingset{lingstyle=gloss}
+% romanization
+\newcommand{\rzc}{\color{BrickRed}}
+\newcommand{\rz}[1]{\textit{\rzc #1}}
+
+% foreign words
+\newcommand{\fzc}{\color[HTML]{008086}}
+\newcommand{\fz}[1]{\textit{\fzc #1}}
+
+% shortcuts for common stuff
+\newcommand{\tsc}[1]{\textsc{#1}}
+\newcommand{\tbs}{\textbackslash}
+\newcommand{\ttd}{\char“~}
+\newcommand{\tss}[1]{\textsuperscript{#1}}
+\renewcommand{\bf}{\bfseries}
+\renewcommand{\it}{\itshape}
+\renewcommand{\sc}{\scshape}
+
+% glossing style
+\definelingstyle{gloss}{glstyle=nlevel, everyglpreamble=\bf\rzc, aboveglftskip=-8pt, belowglpreambleskip=-8pt, aboveexskip=0pt, belowexskip=-4pt}
+\definelingstyle{widegloss}{glstyle=nlevel, everyglpreamble=\bf\rzc, aboveglftskip=0pt,belowglpreambleskip=0pt, aboveexskip=8pt, belowexskip=4pt}
+
+\newenvironment{gloss}{
+	\pex[lingstyle=gloss]%
+}{%
+	\xe%
+}%
 
 \newenvironment{gloss*}{
 	\begin{minipage}{164.6mm}%
@@ -45,49 +61,28 @@
 	\end{minipage}%
 }%
 
-%--- COMMANDS ---%
-% romanization
-% maybe I should go for MidnightBlue?
-% and \fz was \textcolor[HTML]{008086}
-\newcommand{\rz}[1]{\textcolor{BrickRed}{\textit{#1}}}
-\newcommand{\rzz}{\color{BrickRed}\it}
-\newcommand{\rzbf}[1]{\textcolor{BrickRed}{\textbf{#1}}}
-\newcommand{\rzit}[1]{\textcolor{BrickRed}{\textit{#1}}}
-\newcommand{\fz}[1]{\textcolor[HTML]{008086}{\textbf{#1}}}
-\newcommand{\rzbrkt}[1]{\textcolor{BrickRed}{⟨\textbf{#1}⟩}}
-
-% glossing shortcuts
-\newcommand{\gsc}[1]{\textsc{#1}}
-\newcommand{\gbs}{\textbackslash}
-\newcommand{\gtd}{\char“~}
-
-% ipa shortcut
-\newcommand{\textss}[1]{\textsuperscript{#1}}
-
-% ref shortcuts
-\newcommand{\smoyd}[2]{\trailingcitation{\footnotesize \href{#1}{(\gsc{5moyd \#{}#2})}}}
-
-% chapter shortcut
-\newcommand{\chaptertoc}[1]{\setchapterpreamble[u]{\margintoc}\chapter{#1}}
+\newcommand{\smoyd}[2]{\trailingcitation{\footnotesize \href{#1}{(\tsc{5moyd \#{}#2})}}}
 
 \begin{document}
 
-\frontmatter % Denotes the start of the pre-document content, uses roman numerals
+\frontmatter
 
+% title page
 \KOMAoptions{twoside=semi}
 \maketitle
 \KOMAoptions{twoside=false}
 
-% toc formatting
+% toc
 \setlength{\textheight}{23cm} % Manually adjust the height of the ToC pages
 \etocstandarddisplaystyle % "toc display" as if etoc was not loaded
 \etocstandardlines % toc lines as if etoc was not loaded
+\tableofcontents 
 
-\tableofcontents % Output the table of contents
-
+% document start
 \pagelayout{margin}
-\setchapterstyle{kao} % Choose the default chapter heading style
+\setchapterstyle{kao}
 
+% introduction
 \setchapterpreamble[u]{\margintoc}
 \chapter{Introduction}
 \section{Origins}
@@ -96,24 +91,20 @@
 \section{Goals}
 The overarching goal is to create something I enjoy. The project is meant to be naturalistic, but when naturalism conflicts with aesthetic, aesthetic will be prioritized.
 
-A primary way to grow this language and develop new ideas will be through translation of poetry and scientific journals. I hope that these will push the limits of my syntactical rules while also developing an interesting corpus. I'll also try to use \gsc{5moyd}s and hopefully at some point a journal to expand my ability to speak the language and get an intuitive sense for what constructions it prefers.
+A primary way to grow this language and develop new ideas will be through translation of poetry and scientific journals. I hope that these will push the limits of my syntactical rules while also developing an interesting corpus. I'll also try to use \tsc{5moyd}s and hopefully at some point a journal to expand my ability to speak the language and get an intuitive sense for what constructions it prefers.
 
 As I develop this conlang, my goals will be to prioritize analytic constructions (like periphraxis) over morphological ones, write in-depth documentation of how information structure manifests in the language, and ...
 
 \section{Lore}
-\langname{} is set in a worldbuilding project I create as a hobby. The language is an isolate spoken on the eastern coast of a penininsula, once the language of citystates and now a common language throughout a number of coastal countries. It is heavily influenced by East Cape, the \textit{de jure} language of the peninsula. The world the speakers know is analogous to our 1930s.
+\langname{} is set in a worldbuilding project I create as a hobby. The language is an isolate spoken on the eastern coast of a penininsula, once the language of citystates and now a common language throughout a number of coastal countries. It is heavily influenced by East Cape, the \emph{de jure} language of the peninsula. The world the speakers know is analogous to our 1930s.
 
-\mainmatter % Denotes the start of the main document content, resets page numbering and uses arabic numbers
+\mainmatter
 
-\pagelayout{wide}
-\part{Phonology}
-\pagelayout{margin}
+\pagelayout{wide} \part{Phonology} \pagelayout{margin}
 
 \input{lang2_phono.tex}
 
-\pagelayout{wide}
-\part{Morphosyntax}
-\pagelayout{margin}
+\pagelayout{wide} \part{Morphosyntax} \pagelayout{margin}
 
 % There are 3 primary word classes: nouns, verbs, and adpositions. There are also a limited number of adjectives and discourse particles.
 
@@ -125,21 +116,17 @@ As I develop this conlang, my goals will be to prioritize analytic constructions
 
 \input{lang2_syntax.tex}
 
-% \pagelayout{plain}
-% \part{Pragmatics}
-% \pagelayout{margin}
+% \pagelayout{wide} \part{Pragmatics} \pagelayout{margin}
 
-\pagelayout{wide}
-\part{Appendix}
-\pagelayout{margin}
+\pagelayout{wide} \part{Appendix} \pagelayout{margin}
 
-\appendix % From here onwards, chapters are numbered with letters, as is the appendix convention
+\appendix
 
 \input{lang2_lex.tex}
 
-\backmatter % Denotes the end of the main document content
-\setchapterstyle{plain} % Output plain chapters from this point onwards
-%\pagelayout{wide}
+\backmatter
+\setchapterstyle{plain}
+\pagelayout{wide}
 
 %\printbibliography[heading=bibintoc, title=References]
 
