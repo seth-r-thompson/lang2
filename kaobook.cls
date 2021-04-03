@@ -243,6 +243,7 @@
 %----------------------------------------------------------------------------------------
 
 % Set KOMA fonts for book-specific elements
+\addtokomafont{title}{\normalfont\bfseries}
 \addtokomafont{part}{\normalfont\scshape\bfseries}
 \addtokomafont{partentry}{\normalfont\scshape\bfseries}
 \addtokomafont{chapter}{\normalfont\bfseries}
