@@ -1,27 +1,27 @@
 % --- COMMANDS ---
 \makeatletter
-\define@key{entry}{nbm}[]{\def\entry@nbm{#1}}
+\define@key{entry}{sound}[]{\def\entry@sound{#1}}
 \define@key{entry}{pos}[]{\def\entry@pos{#1}}
 \define@key{entry}{etym}[]{\def\entry@etym{#1}}
 \define@key{entry}{note}[]{\def\entry@note{#1}}
 
-\setkeys{entry}{nbm,pos,etym,note}
+\setkeys{entry}{sound,pos,etym,note}
 
-\newcommand{\entry}[3][]{%
-\begingroup%
-\setcounter{sense}{1}%
-\setkeys{entry}{#1}%
-\par \begin{minipage}{\columnwidth}%
-	\textbf{\rzc #2}%
-	\enskip {\footnotesize \ifdefempty{\entry@nbm}{}{• \entry@nbm{} nbm.} \ifdefempty{\entry@pos}{}{• \entry@pos}} \\%
-	\ifdefempty{\entry@note}{}{\enskip {\footnotesize \textit{note:} \entry@note} \\}%
-	\ifdefempty{\entry@etym}{}{\enskip {\footnotesize ← from \entry@etym} \\}%
-	#3\vspace{12pt}%
-\end{minipage}%
-\endgroup%
-}
+% % digital-style definitions
+% \newcommand{\entry}[3][]{%
+% \begingroup%
+% \setcounter{sense}{1}%
+% \setkeys{entry}{#1}%
+% \par \begin{minipage}{\columnwidth}%
+% 	\textbf{\rzc #2}%
+% 	\enskip {\footnotesize \ifdefempty{\entry@sound}{}{• \entry@sound{} nbm.} \ifdefempty{\entry@pos}{}{• \entry@pos}} \\%
+% 	\ifdefempty{\entry@note}{}{\enskip {\footnotesize \textit{note:} \entry@note} \\}%
+% 	\ifdefempty{\entry@etym}{}{\enskip {\footnotesize ← from \entry@etym} \\}%
+% 	#3\vspace{12pt}%
+% \end{minipage}%
+% \endgroup%
+% }
 
-% linear (digital-style) definitions
 %\newcounter{sense}
 %\NewDocumentCommand{\sense}{o}{%
 %\ifnum\the\value{sense}>1\\\fi%
@@ -30,7 +30,22 @@
 %\stepcounter{sense}%
 %}
 
-% cramped (print-style) definitions
+% print-style definitions
+\newcommand{\entry}[3][]{%
+\begingroup%
+\setcounter{sense}{1}%
+\setkeys{entry}{#1}%
+\par \begin{minipage}{\columnwidth}%
+	\textbf{\rzc #2}%
+	\ifdefempty{\entry@pos}{}{\enskip•\enskip {\footnotesize\it\entry@pos}}%
+	\ifdefempty{\entry@sound}{}{\enskip•\enskip {\footnotesize\entry@sound}}%
+	\ifdefempty{\entry@etym}{}{\enskip←\enskip {\footnotesize\entry@etym}}%
+	\ifdefempty{\entry@note}{}{\enskip•\enskip {\footnotesize\entry@note}}%
+	\enskip•\enskip#3%
+\end{minipage}%
+\endgroup%
+}
+
 \newcounter{sense}
 \NewDocumentCommand{\sense}{o}{%
 \ifnum\the\value{sense}>1\enskip\fi%
@@ -38,22 +53,6 @@
 	\IfNoValueTF{#1}{}{\textit{#1}}%
 \stepcounter{sense}%
 }
-
-%\define@key{mean}{use}[]{\def\mean@use{#1}}
-%\define@key{mean}{jrgn}[]{\def\mean@jrgn{#1}}
-%
-%\setkeys{mean}{use,jrgn}
-
-%\newcommand{\sense}[1][]{%
-%\begingroup%
-%\setkeys{mean}{#1}%
-%\ifnum\the\value{sense}>1\\\fi%
-%	\textbf{\arabic{sense}:}\enskip%
-%	\ifdefempty{\mean@jrgn}{}{\textsc{\mean@jrgn} \ifdefempty{\mean@use}{}{\enskip}}%
-%	\ifdefempty{\mean@use}{}{\textit{\mean@use}}%
-%\stepcounter{sense}%
-%\endgroup%
-%}
 
 \newenvironment{dic}[1]{%
 	%\newpage%
@@ -71,12 +70,11 @@
 A \langname{}-to-English dictionary is provided below.
 
 \section*{How to use}
-Entries for lexical items are listed by their spelling in generic form, ignoring morphological alterations. Derived words are listed as separate entries, but their source word is given. On the other hand, idiomatic or fixed expressions are given under the lexical item.
+Entries for lexical items are listed by their spelling in generic form, ignoring morphophonological alterations. Derived words are listed as separate entries, but their source word is given. On the other hand, idiomatic or fixed expressions are given under the lexical item.
 
-Morphophonological information, such as \rz{nebam} vowels, underlying form, or irregular alterations, is listed when pertinent. Furthermore, senses that are specific to a certain word form are given in \textit{italics}, where as sense that are specific to a field or context are given in \textsc{\textit{small caps}}.
+Each sense of a word has three basic parts: a quick, single-word translation for ease-of-use; a more detailed explanation of the concept; and an example sentence. The sentences are usually designed to help the reader figure the word's meaning out from context, particularly for \langname{} speakers and learners.
 
-\section*{Examples}
-Examples are generally given as simple declarative sentences, avoiding where possible movement due to focus fronting. Typically examples are chosen to provide context or illustrate usage notes for a definition.
+Pronunciations are given dictionary-style in a phonetic alphabet more intuitive to native \langname{} speakers.
 
 \pagelayout{wide}
 \setlength{\columnsep}{30pt}
@@ -105,7 +103,7 @@ Examples are generally given as simple declarative sentences, avoiding where pos
 \begin{dic}{C}
 \entry[pos=v. tr.]{cam}{\sense put (smn.) to sleep \sense[refl.] go to bed \sense[mediopassive] nap, snooze: \rz{piran picik camnat tę-kamc im-pebar} “the child napped after school.” \sense[idiom.] calm (smn.) down, soothe \sense[coll.] bore (an audience): \rz{ah-turya cad nakraran orran im-remaczi} “the comedian's subpar performance last night bored me.”}
 \entry[pos=n.]{cǫca}{\sense daytime sky}
-\entry[pos=n., nbm=ǫ]{cunvarą}{\sense seagull \sense[\tsc{politics}] columnist, writer (in newspaper, magazine): \rz{cunvarǫzar hazeklam tę nassoin kesaratnik lar orra} “writers critiqued the king's subpar response.” \sense[idiom. arch.] court jester; a traditional storyteller who served as a royal advisor representing the general public \sense[{\bf\rzc satat cunvarą} pej.] feign interest for attention, virtue signal}
+\entry[pos=n., sound=ǫ]{cunvarą}{\sense seagull \sense[\tsc{politics}] columnist, writer (in newspaper, magazine): \rz{cunvarǫzar hazeklam tę nassoin kesaratnik lar orra} “writers critiqued the king's subpar response.” \sense[idiom. arch.] court jester; a traditional storyteller who served as a royal advisor representing the general public \sense[{\bf\rzc satat cunvarą} pej.] feign interest for attention, virtue signal}
 \end{dic}
 
 % ===== E =====
@@ -113,7 +111,7 @@ Examples are generally given as simple declarative sentences, avoiding where pos
 \entry[pos=v. tr.]{eccut}{\sense hurt (smth.) physically; note: more severe than \rz{ęrvat} \sense[reflexive] get in an accident \sense[idiom.] surprise (smn.)}
 \entry[pos=particle]{egi}{\sense (expressing disagreement or disbelief) just, only: \rz{egi Matkó aczé sém lar tę-het} “she said there'll be just two baskets.”}
 \entry[pos=n.]{emas}{\sense[ntr.] plot of land}
-\entry[pos=n.,nbm=ę]{ennąt}{\sense develop into, become \sense change into (a pair of clothes) \sense move to (another place)}
+\entry[pos=n.,sound=ę]{ennąt}{\sense develop into, become \sense change into (a pair of clothes) \sense move to (another place)}
 \entry[pos=adj.]{esyi}{\sense good \sense correct, appropriate}
 \end{dic}
 
@@ -150,7 +148,7 @@ Examples are generally given as simple declarative sentences, avoiding where pos
 \entry[pos=n.,etym=\rz{kat} “pull” + \rz{-akz}]{katakz}{\sense[\rz{katakz im-saycezzar}] butterfly effect}
 \entry[pos=n.,etym=\rz{kęsa} “soldier” + \rz{-soi}]{kęsasoi}{\sense high-ranking general \sense (with specifier) military officer: \rz{kęsasoi ???} “field officer,” \rz{kęsasoi ???} “medical officer”}
 \entry[pos=n.,etym=\rz{kęsa} “soldier” and \rz{taspa} “sea”]{kę́stapa}{\sense navy officer, sailor (on a military ship)}
-\entry[nbm=e,pos=v. tr.]{kęstat}{\sense lead \sense[\sc military] be in command of: \rz{nassoin kąstecik su kagęsa su kagę́stapa} “the king commands both army and navy.” \sense train (an apprentice) in \rz{tę} a skill: \rz{tę-caradá kąstettik rat lalasa} “auntie's teaching me to sew.” \sense formally teach, school (a student) in \rz{ez} a discipline: \rz{rabahan picik kąstetnat ez-latya} “the minister was brought up in the faith.” \sense[pej.] indoctrinate}
+\entry[sound=e,pos=v. tr.]{kęstat}{\sense lead \sense[\sc military] be in command of: \rz{nassoin kąstecik su kagęsa su kagę́stapa} “the king commands both army and navy.” \sense train (an apprentice) in \rz{tę} a skill: \rz{tę-caradá kąstettik rat lalasa} “auntie's teaching me to sew.” \sense formally teach, school (a student) in \rz{ez} a discipline: \rz{rabahan picik kąstetnat ez-latya} “the minister was brought up in the faith.” \sense[pej.] indoctrinate}
 \entry[pos=n.,etym=partial reduplication of \rz{pira} “child”]{kipira}{\sense adolescent; someone around or older than 8 years old who has not yet been ritually scarred}
 \entry[pos=n.]{kotus}{\sense divinity}
 \entry[pos=n.,etym=\rz{kotus} + \rz{-soi}]{kotussoi}{\sense body part; soul; the perfect implements wielded by an imperfect mind}
@@ -171,7 +169,7 @@ Examples are generally given as simple declarative sentences, avoiding where pos
 \begin{dic}{M}
 \entry[pos=n.]{makra}{\sense chest; the part of the body below the neck and above the groin, including the shoulders and upper arms \sense[idiom.] responsibility, maturity, calmness under pressure \sense[\rzc\bf tę-makra im] during, for the duration of}
 \entry[pos=n.]{mas}{\sense[ntr.] hour \sense[\rz{tę-kamc im-mas} adv.] in an hour: }
-\entry[nbm=o,pos=n.]{metka}{\sense rounded semi-circle hollow container; bowl, basket, vessel  \sense measure word for crops or farm animals}
+\entry[sound=o,pos=n.]{metka}{\sense rounded semi-circle hollow container; bowl, basket, vessel  \sense measure word for crops or farm animals}
 \end{dic}
 
 % ===== N =====
@@ -183,18 +181,18 @@ Examples are generally given as simple declarative sentences, avoiding where pos
 \entry[pos=v. tr.]{nenat}{\sense crouch, squat \sense duck below (smth.) \sense[\rzc\bf nenat ah] might, possibly; dubtative irrealis construction}
 \entry[pos=n.,etym=Old East Cape]{nęcta}{\sense[\tsc{medical}] lung}
 \entry[pos=n.]{nik}{\sense flat surface, plane \sense[adj.] flat}
-\entry[pos=v. in.,nbm=o,etym=\rz{nik} “flat” + \rz{hor} “craft”]{nikhar}{\sense to create a map of \rz{ez} a region}
+\entry[pos=v. in.,sound=o,etym=\rz{nik} “flat” + \rz{hor} “craft”]{nikhar}{\sense to create a map of \rz{ez} a region}
 \entry[pos=n.,etym=\rz{nikhar} “make maps” + \rz{rabaha} “minister”]{níkharkah}{\sense geography \sense[archaic] cartography}
 \entry[pos=n.,etym=\rz{níkharkah} “geography” + \rz{-soi}]{nikhorkassoi}{\sense geographer \sense[archaic] cartographer}
 \end{dic}
 
 % ===== O =====
 \begin{dic}{O}
-\entry[pos=adj.,nbm=o,note=underlying /ot͡soa/]{oca}{\sense deep \sense (of people) tall and thin, wiry, spindly}
-\entry[pos=n.,nbm=e]{ocza}{\sense two}
-\entry[pos=n., nbm=o]{okva}{\sense valley}
+\entry[pos=adj.,sound=o,note=underlying /ot͡soa/]{oca}{\sense deep \sense (of people) tall and thin, wiry, spindly}
+\entry[pos=n.,sound=e]{ocza}{\sense two}
+\entry[pos=n., sound=o]{okva}{\sense valley}
 \entry[pos=adj.]{orra}{\sense dry \sense (of food) stale \sense (of people) feeble, frail \sense (of man-made objects) subpar, fragile, poorly-made}
-\entry[pos=n.,nbm=o,etym=Classical Cape]{armę́}{\sense ocean}
+\entry[pos=n.,sound=o,etym=Classical Cape]{armę́}{\sense ocean}
 \entry[pos=v. in.]{ossat}{\sense (of plants) to grow in size \sense (of people) to develop emotionally, intellectually}
 \entry[pos=n.]{ossaczi}{\sense nurterer, gardener \sense[idiom.] caretaker, guardian¸ nanny, babysitter}
 \entry[pos=v. tr.]{ot}{\sense be smth. \sense[\rzc\bf ot tę] have done \rz{tę} something; perfective construction \sense[\rzc\bf ot satatakc] do; support construction to move adjuncts}
@@ -209,7 +207,7 @@ Examples are generally given as simple declarative sentences, avoiding where pos
 
 % ===== P =====
 \begin{dic}{P}
-\entry[pos=n.,nbm=e]{pakna}{\sense house, shelter}
+\entry[pos=n.,sound=e]{pakna}{\sense house, shelter}
 \entry[pos=n.]{paltoja}{\sense winter \sense drought, dry spell \sense[\tsc{politics} idiom.] lame-duck period}
 \entry[pos=n.]{parka}{\sense rainstorm}
 \entry[pos=n.]{parsa}{\sense a pair of eyes \sense[idiom.] open-mindedness, understanding}
@@ -223,7 +221,7 @@ Examples are generally given as simple declarative sentences, avoiding where pos
 % ===== R =====
 \begin{dic}{R}
 \entry[pos=n.]{rabaha}{\sense[\sc religion] minister \sense[archaic] ministry}
-\entry[pos=n.,nbm=e,etym=Old East Cape \fz{raxir} “fish”, note=sometimes spelled {\rz{raxir}, pronounced {[ɹaʃɛɹ]}, in elite circles or when exaggerating}]{rasar}{\sense meat (food) \sense[archaic] fish delicacy}
+\entry[pos=n.,sound=e,etym=Old East Cape \fz{raxir} “fish”, note=sometimes spelled {\rz{raxir}, pronounced {[ɹaʃɛɹ]}, in elite circles or when exaggerating}]{rasar}{\sense meat (food) \sense[archaic] fish delicacy}
 \entry[pos=n.]{recam}{\sense ritual scar made by a ceremonial blade on the upper arm near the shoulder of the dominant hand (historically on only the right arm) which symbolizes adulthood; usually done around the age of 16}
 \entry[pos=pronoun]{rat}{\sense me, I, my, mine}
 \entry[pos=n.,etym=\rz{recam} + \rz{-c}]{recaj}{\sense adulthood \sense the human condition, humanity, humanness}
@@ -249,7 +247,7 @@ Examples are generally given as simple declarative sentences, avoiding where pos
 
 % ===== T =====
 \begin{dic}{T}
-\entry[pos=v. in.,nbm=ę]{tahąt}{\sense stretch (one's limbs) \sense reach for \rz{???} something above oneself \sense aspire to \rz{???} an unreachable goal: \rz{... akakvazi ... oca ...} “he aspired to be a tagplayer, but he wasn't tall enough.” \sense[\sc religion] pray}
+\entry[pos=v. in.,sound=ę]{tahąt}{\sense stretch (one's limbs) \sense reach for \rz{???} something above oneself \sense aspire to \rz{???} an unreachable goal: \rz{... akakvazi ... oca ...} “he aspired to be a tagplayer, but he wasn't tall enough.” \sense[\sc religion] pray}
 \entry[pos=n.]{taspa}{\sense sea}
 \entry[pos=n.]{tąka}{\sense[(uncountable)] tree \sense wood}
 \entry[pos=n.]{tąvar}{\sense fallen leaves, debris \sense senility \sense[pej.] drunken stupor \sense[adj.] rambling, incohorent}

@@ -1,6 +1,5 @@
 \documentclass[fontsize=12pt,twoside=false,numbers=noenddot]{kaobook}
 
-\usepackage{styles/environments} % for the TODO boxes
 \usepackage{expex}
 \usepackage{fontspec}
 \usepackage{booktabs}
@@ -27,12 +26,16 @@
 \hypersetup{colorlinks=true, linkcolor=black, urlcolor=blue}
 
 % romanization
-\newcommand{\rzc}{\color{BrickRed}}
+\newcommand{\rzc}{\color[HTML]{5B2D90}}
 \newcommand{\rz}[1]{\textit{\rzc #1}}
 
 % foreign words
-\newcommand{\fzc}{\color[HTML]{008086}}
+\newcommand{\fzc}{\color[HTML]{2D8F5B}}
 \newcommand{\fz}[1]{\textit{\fzc #1}}
+
+% proto words
+\newcommand{\pzc}{\color[HTML]{8F5B2D}}
+\newcommand{\pz}[1]{\textit{\pzc #1}}
 
 % shortcuts for common stuff
 \newcommand{\tsc}[1]{\textsc{#1}}
@@ -80,7 +83,6 @@
 
 % document start
 \pagelayout{margin}
-\setchapterstyle{kao}
 
 % introduction
 \setchapterpreamble[u]{\margintoc}
@@ -102,34 +104,27 @@ As I develop this conlang, my goals will be to prioritize analytic constructions
 
 \pagelayout{wide} \part{Phonology} \pagelayout{margin}
 
-\input{lang2_phono.tex}
+\input{chapters/phono.tex}
 
 \pagelayout{wide} \part{Morphosyntax} \pagelayout{margin}
 
-% There are 3 primary word classes: nouns, verbs, and adpositions. There are also a limited number of adjectives and discourse particles.
+\input{chapters/nouns.tex}
 
-\input{lang2_nouns.tex}
+\input{chapters/verbs.tex}
 
-\input{lang2_verbs.tex}
+\input{chapters/other_pos.tex}
 
-\input{lang2_other_pos.tex}
-
-\input{lang2_syntax.tex}
-
-% \pagelayout{wide} \part{Pragmatics} \pagelayout{margin}
+\input{chapters/syntax.tex}
 
 \pagelayout{wide} \part{Appendix} \pagelayout{margin}
 
 \appendix
 
-\input{lang2_addendum.tex}
+\input{chapters/addendum.tex}
 
-\input{lang2_lex.tex}
+\input{chapters/lexicon.tex}
 
 \backmatter
-\setchapterstyle{plain}
 \pagelayout{wide}
-
-%\printbibliography[heading=bibintoc, title=References]
 
 \end{document}
