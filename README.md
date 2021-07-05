@@ -6,5 +6,5 @@ Although this project is a hobby, I host it here publically mainly for easy shar
 
 In this repository you can find:
 - the *tex* files I use to compile the reference grammar
-- a version of the Libertinus Sans font family that I modified to support more unicode characters
+- a version of the [_Libertinus Sans_ font family](https://github.com/alerque/libertinus) that I modified to support more unicode characters
 - a version of the [_kaobook_ class](https://github.com/fmarotta/kaobook) that I modified slightly to support my use case
