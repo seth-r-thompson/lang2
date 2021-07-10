@@ -1,123 +1,114 @@
 \setchapterpreamble[u]{\margintoc}
 \chapter{Verbs}
-The \langname{} verb phrase is more inflectional than the noun phrase, but periphrastic constructions handle most temporal marking, with inflection largely reserved for agreement. Because verbs have fixed valency, prepositional adjuncts, periphrastic constructions, and dummy nouns are common.
+Like the noun phrase, the \langname{} verb phrase is mostly analytic, and inflection is largely reserved for agreement. Other parts of the verb complex are handled by periphrastic constructions, notably including valency operations and TAM.
 
-\section{Stems}
-% Most verbs are \rz{t}-stem verbs, although some verbs are \rz{m}-stem verbs and some are \rz{r}-stem verbs. Verbs conjugation is largely predictable via morphosyntactic processes.
-
-% \begin{kaobox}[frametitle=\sc todo:]
-% 	Figure out why the stem differences exist---long-forgotten derivation? maybe some kind of historical aspect stuff that got baked in? Maybe it's just like forever ago?
-% \end{kaobox}
-
-\subsection{\rz{t}-stems}
-\rz{T}-stems are fairly predictable, although there is some affrication of /t/ in certain forms.
-
-\begin{table}[h] \centering
-	\begin{tabular}{l|ccc}
-		\toprule
-		& \sc\bf gen & \sc\bf prox & \sc\bf dist \\ 
-		\midrule
-		\sc\bf → 0 & \rzc\it het & \rzc\it hetik & \rzc\it hét \\
-		\sc\bf → 1 & \rzc\it hetta & \rzc\it hettik & \rzc\it hattá\\
-		\sc\bf → 2 & \rzc\it hetca & \rzc\it hetcik & \rzc\it hatcá \\
-		\sc\bf → 3c & \rzc\it hec & \rzc\it hecik & \rzc\it hacá \\
-		\sc\bf → 3n & \rzc\it  hetna & \rzc\it hetnik & \rzc\it hatná \\
-		\sc\bf 3n → & \rzc\it hecz & \rzc\it heczik & \rzc\it haczá\\
-		\sc\bf refl & \rzc\it hetka & \rzc\it hetkik & \rzc\it hatká \\
-		\bottomrule
-	\end{tabular}
-	\caption{Conjugation of \rz{t}-stem \rz{het}}
-\end{table}
-
-\subsection{\rz{r}-stems}
-\rz{R}-stem verbs are generally predictable in most forms. However, they share morphology for both neuter forms agent and patient.
-
-\begin{table}[h] \centering
-	\begin{tabular}{l|ccc}
-		\toprule
-		& \sc\bf gen & \sc\bf prox & \sc\bf dist \\ 
-		\midrule
-		\sc\bf → 0 & \rzc\it par & \rzc\it parik & \rzc\it pár \\
-		\sc\bf → 1 & \rzc\it parta & \rzc\it partik & \rzc\it partá \\
-		\sc\bf → 2 & \rzc\it parca & \rzc\it parcik & \rzc\it parcá \\
-		\sc\bf → 3c & \rzc\it pars & \rzc\it parsik & \rzc\it parsá \\
-		\sc\bf 3n & \rzc\it paz & \rzc\it pazzik & \rzc\it páz \\
-		\sc\bf refl & \rzc\it parka & \rzc\it parkik & \rzc\it parká \\
-		\bottomrule
-	\end{tabular}
-	\caption{Conjugation of \rz{r}-stem \rz{par}}
-\end{table}
-
-\subsection{\rz{m}-stems}
-\rz{M}-stems are notable for widespread voicing caused by /m/ clusters.
-
-\begin{table}[h] \centering
-	\begin{tabular}{l|ccc}
-		\toprule
-		& \sc\bf gen & \sc\bf prox & \sc\bf dist \\ 
-		\midrule
-		\sc\bf → 0 & \rzc\it sem & \rzc\it semik & \rzc\it sém \\
-		\sc\bf → 1 & \rzc\it sed & \rzc\it sedik & \rzc\it sadá \\
-		\sc\bf → 2 & \rzc\it sej & \rzc\it sejik & \rzc\it sajá \\
-		\sc\bf → 3c & \rzc\it sems & \rzc\it semsik & \rzc\it samsá \\
-		\sc\bf → 3n & \rzc\it semna & \rzc\it semnik & \rzc\it samná \\
-		\sc\bf 3n → & \rzc\it semz & \rzc\it semzik  & \rzc\it samzá \\
-		\sc\bf refl & \rzc\it seg & \rzc\it segik & \rzc\it sagá \\
-		\bottomrule
-	\end{tabular}
-	\caption{Conjugation of \rz{m}-stem \rz{sem}}
-\end{table}
-
-\section{Agreement}
-Verbs agree with both the deictic position of the subject noun and the person of the two least oblique arguments of transitive verbs. Only the sole finite verb of a clause bears agreement.
-
-\subsection{Polypersonal}
-Transitive verbs exhibit polypersonal agreement via a suffix to the verb root. Intransitive verbs don't require person marking, but it can be used for emphasis or clarification; in such cases, either the reflexive or \tsc{3c} patient morpheme is used.
-
-\begin{table}[h] \centering
-\begin{tabular}{cc|cccc}
-	& & \multicolumn{4}{c}{\textbf{Patient}} \\
-	& & \textbf{1} & \textbf{2} & \textbf{\tsc{3c}} & \textbf{\tsc{3n}} \\ \midrule
-	\multirow{5}{*}{\textbf{Agent}} & \textbf{1} & - & c\cellcolor{purple!25} & s\cellcolor{yellow!25} & n\cellcolor{blue!25} \\
-	& \textbf{2} & t\cellcolor{green!25} & - & s\cellcolor{yellow!25} & n\cellcolor{blue!25} \\
-	& \textbf{\tsc{3c}} & t\cellcolor{green!25} & s\cellcolor{yellow!25} & s\cellcolor{yellow!25} & n\cellcolor{blue!25} \\
-	& \textbf{\tsc{3n}} & n\cellcolor{blue!25} & z\cellcolor{red!25} & z\cellcolor{red!25} & z\cellcolor{red!25} \\
-	& \textbf{\tsc{refl}} & \multicolumn{4}{c}{k\cellcolor{black!25}} \\
-\end{tabular}
-\caption{Person agreement}
-\end{table}
-
-For the most part verb agreement is actually patient agreement, but some isolated cases are actually polypersonal. Because so many agreement suffixes share the same form, \langname{} is only occasionally pro-drop.
-
-\subsection{Deictic}
-Generic noun forms do not have agreement morphemes, but proximal nouns demand the verbal suffix \rz{-ik} and distal nouns shift stress to the final syllable.\marginnote{The stress shifting on both nouns and verbs derives from the same, now elided, morpheme.} These suffixes are attached after polypersonal agreement suffixes.
+Verbs typically fall into one of three stems: \rz{t}-stems, \rz{m}-stems and \rz{r}-stems. Of the three, \rz{t}-stems are by far the most common and include both transitive and intransitive verbs. The \rz{m}-stem contains just a few members ... The majority of \rz{r}-stem verbs are intransitive, derived from a historical detransitivizer suffix -\pz{?}.
 
 \begin{kaobox}[frametitle=\sc todo:]
-	Rework agreement with distal nouns: it should be more interesting, perhaps shifting stress in some places but not others. For example \tsc{3c.pat} forms might not shift stress because [s] is pretty cluster-happy.
+	Figure more about the stems--how does that interact with valency, too? Maybe verbs are a lot more lax with endings?
+	Japanese has a dichotomy of \emph{tr} to \emph{in} via -\emph{r}, \emph{in} to \emph{tr} via -\emph{s}, and some roots that reflect both endings. Maybe I can do something like that?
 \end{kaobox}
 
-\section{Negation}
-Negation is handled with a verbal suffix \rz{-res} \marginnote{The affix's position is from its origin as an auxiliary which bore agreement.} which occurs before agreement affixes. Verbal negation is the primary form of negation in \langname{}, so the forms are rather common. It has a number of allomorphs shown in Table \ref{tab:negative_verb_suffixes}. 
+\section{Agreement}
+Verbs display agreement along two axes: \emph{deixis} and \emph{person}. Deictic agreement is only with the subject of the clause, but person agreement\marginnote[*-1]{Despite person agreement, \langname{} is rarely pro-drop.} is with both subject and the object, if the verb is transitive. Only the sole finite verb of a clause bears agreement; verbs demoted to adjuncts or arguments are always uninflected.
 
-\begin{table}[h] \centering
-	\begin{tabular}{l|ccc}
+\subsection{Person}
+In old \langname{}, verb agreement was transparently derived from cliticized pronouns. However, sound change reduced agreement endings, leading to synchronic forms that are often actually patient agreement.
+
+\begin{kaobox}[frametitle=\sc todo:]
+	How to cover morphophonological stuff? The two main ones are affrication of /t/ + /s z/ and cluster-final /s ts/ merging to [s], spelled \rz{s}.
+\end{kaobox}
+
+\begin{margintable} \centering
+	\begin{tabular}{cc}
 		\toprule
-		& \sc\bf gen & \sc\bf prox & \sc\bf dist \\ 
+		\bf Morpheme & \bf Meaning \\
 		\midrule
-		\sc\bf → 0/2/3c & \rzc\it -ras & \multirow{2}{*}{\rzc\it -réks} & \rzc\it -rés \\
-		\sc\bf → 1 & \rzc\it -rac & & \rzc\it -réc \\
-		\sc\bf → 3n & \rzc\it -rans & \rzc\it -régs & \rzc\it -réns \\
-		\sc\bf 3n → & \rzc\it -raz & \rzc\it -rékz & \rzc\it -réz \\
-		\sc\bf refl & \rzc\it -raks & \rzc\it -rék & \rzc\it -réks \\
+		\it -\rz{rc}- & \sc 1.ag \\
+		\it -\rz{r}- & \sc 1.pt \\
+		\it -\rz{a}- & \sc 2 \\
+		\it -\rz{s}- & \sc 3c \\
+		\it -\rz{z}- & \sc 3n \\
+		\it -\rz{ns}- & \tsc{1}↔\tsc{3n} \\
+		\it -\rz{k}- & \sc refl \\
 		\bottomrule
 	\end{tabular}
-	\caption{Negative suffixes}
-	\label{tab:negative_verb_suffixes}
-\end{table}
+	\caption{Summary of person agreement}
+	\label{tbl:person}
+\end{margintable}
 
-\marginnote[*-3]{The affix is morphophonemically ⫽ɹes⫽.}
+Except in a few outlier cases, agreement is fairly predictable from Table \ref{tbl:person}. Neuter agreement takes precedent over other morphemes when applicable. Furthermore, -\rz{a}- only appears on intransitive verbs; for transitive verbs, the appropriate agreement with the other argument is used instead. Finally, -\rz{r}- is used for intransitives,\marginnote{1st-person agreement is ergative as an accident of sound change.} not the agent form.
 
-Because of the merger of the intransitive, second-person and third-person patient forms, \langname{} is considered to have assymetrical negation. As a consequence, explicit person marking via pronouns is more common with negated verbs, especially in the proximal, where all common persons shared the same phonetic form. 
+When attached to a finite verb without deictic agreement, person agreement morphemes are realized as short: unlike many other affixes, they do not shift stress. This realization preserves old stress patterns before the morphemes were reduced. Because of this quirk, some scholars argue that person agreement morphemes are actually clitics to which deictic affixes attach.
+
+\begin{kaobox}[frametitle=\sc todo:]
+	Do I want to keep this or say they got analogized? Maybe there's some weird interactions with the stress-fixing rules I've been cooking up?
+\end{kaobox}
+
+Because \langname{} allows frequent fronting, a clause's agent and patient can become ambiguous when the agreement morphemes are not sufficient. This especially occurs with common and neuter agreement. A mediopassive\marginnote{The \rz{het} construction is not a true passive: the verb does not change valency (\ie the \tsc{a}-like argument can't be omitted).} construction formed with \rz{het} can be used to clarify such instances. In the mediopassive, the semantic verb is demoted to adjunct as a converb.
+
+\begin{gloss*}
+	\a \begingl
+		\glpreamble Kanyi akvací Arpat. \endpreamble
+			Kanyi[\tsc{name}]
+			akvat-s-í[tag-\tsc{3c-prox}]
+			Arpat[\tsc{name}]
+		\glft “Kanyi tagged Arpat.” \\ \textit{or} “Who Arpat tagged was Kanyi.”
+	\endgl
+	\a \begingl
+		\glpreamble Kanyi hací Arpat akvetnal. \endpreamble
+			Kanyi[\tsc{name}]
+			het-s-í[be\tsc{-3c-prox}]
+			Arpat[\tsc{name}]
+			akvatnal[tagging]
+		\glft “Kanyi was tagged by Arpat.”
+	\endgl
+\end{gloss*}
+
+In (\lastx a), it's not clear if Kanyi is the tagger or the focus-fronted taggee; both interpretations are grammatical. The use of the passive in (\lastx b) is less ambiguously interpreted, always meaning that Arpat is the semantic agent.
+
+\subsection{Deixis}
+Generic noun forms do not have agreement morphemes, but proximal nouns demand the verbal suffix -\rz{i} and distal nouns shift stress to the final syllable.\marginnote{The stress shift is a remnant of an elided morpheme.} These suffixes are attached after person agreement suffixes. The proximal suffix -\rz{i} is often stressed itself.
+
+\begin{kaobox}[frametitle=\sc todo:]
+	Same question as earlier: do I like the stress rules for this affix? Or the way this next one preserves things?
+\end{kaobox}
+
+Due to historical stress rules, the distal agreement suffix is more fusional for some select verb forms. Although the rime was lost from the common and neuter agreement suffixes in other forms, it remains in the distal form.
+
+\begin{margintable}[*-5] \centering
+	\begin{tabular}{cc}
+		\toprule
+		\bf Generic & \bf Distal \\
+		\midrule
+		\it -\rz{s} & \it -\rz{séc} \\
+		\it -\rz{z} & \it -\rz{zóc} \\
+		\bottomrule
+	\end{tabular}
+	\caption{Deictic forms of agreement}
+\end{margintable}
+
+Deictic agreement requires verbs to encode the same evidentiality as the subject noun phrase, but this may be unfelicitious in some contexts. The \rz{het} construction can also be used to change verbal agreement.
+
+\begin{gloss*}
+	\a \ljudge{*} \begingl
+		\glpreamble Azzár hassusarsí nassoin.\endpreamble 
+			as-zár[foreigner-\tsc{pl.dist}]
+			hassusar-s-í[exalt-\tsc{3c-prox}]
+			nassoi-n[king-\tsc{prox}]
+		\glft \textit{Intended:} “(I see) the foreigners (I've heard about) praising the king.”
+	\endgl
+	\a \begingl
+		\glpreamble Nassoin hací azzár hossusarnal.\endpreamble
+			nassoi-n[king-\tsc{prox}]
+			het-s-ik[be\tsc{-3c-prox}]
+			as-zár[foreigner-\tsc{pl.dist}]
+			hossusarnal[exalting]
+		\glft “(I see) the king being praised by the foreigners (I've heard about).”
+	\endgl
+\end{gloss*}
+
+In (\lastx a), the speaker intends to mark the verb as proximal to convey direct evidence, but the utterance is ungrammatical because the verb doesn't agree with its subject, \rz{azzár}. To correct this, the construction in (\lastx b) is used, which takes advantage of the passive to mark the verb phrase as proximal.
 
 \section{Converb}
 The converb form of a verb is used for simultaneous action. The converb is commonly used to describe the manner of the main clause, and is also commonly used in periphrastic constructions. The converbial suffix is \rz{-nat}, although some roots select \rz{-os}.
@@ -127,117 +118,70 @@ The converb form of a verb is used for simultaneous action. The converb is commo
 \end{kaobox}
 
 \section{Transitivity}
-Transitivity is lexically fixed, but transitive verbs can still be functionally intransitive with the use of dummy objects.
+Transitivity is lexically set. There are three valency classes a verb can fall into: \emph{transitive}, \emph{intransitive}, and \emph{pseudo-transitive}. Transitive verbs always have two arguments and intransitive verbs always have one.\marginnote{All valency classes allow a number of optional but often collocated adjuncts, introduced as prepositional phrases or converbs.} Pseudo-transitive verbs also take more than one argument, but are morphologically intransitive, and as such their additional argument is a prepositional phrase that cannot be ommitted. 
 
-Prescriptive convention holds that verbs exhibit polypersonal agreement with their dummy objects, but speakers commonly omit polypersonal marking in these constructions, as in (\nextx b).
+Non-finite verbs of each type do not have fixed valence and can omit all arguments. In some periphrastic constructions, those arguments are still required by the new finite verb. However, other constructions, and general adjectival or adverbial use, often appear without overt arguments.
+
+There are few methods to decrease a verb's valency, which is usually done when an argument is sufficiently clear from context. In contrast, there are no methods to increase a verb's valency.
+
+The most common method of valency reduction is dummy objects. Most transitive verbs have a collocated dummy object.\marginnote{Some verbs have multiple collocations for different senses.} Prescriptive convention holds that verbs exhibit person agreement with these objects, but in speech these verbs are often treated as morphologically intransitive, as in (\nextx b). Although colloquial, this phenomenon points to further grammaticalization of dummy objects.
 
 \begin{gloss}
 	\a \begingl
-		\glpreamble sec Sasamsik tasa. \endpreamble
-			sec[\tsc{3c}]
-			sesam-s-ik[say-\tsc{3c.p-prox}]
+		\glpreamble a Sesamsí tasa. \endpreamble
+			a[2]
+			sesam-s-í[say-\tsc{3c-prox}]
 			tasa[letter]
-		\glft “He's saying something.”
+		\glft “You're saying something.”
 		\trailingcitation (Formal)
 	\endgl
 	\a \begingl
-		\glpreamble sec Semik lar. \endpreamble
-			sec[\tsc{3c}]
-			sem-ik[say-\tsc{prox}]
+		\glpreamble a Samai lar. \endpreamble
+			a[2]
+			sem-a-i[say-\tsc{2-prox}]
 			lar[\tsc{exp}]
-		\glft “He's talking.”
+		\glft “You're talking.”
 		\trailingcitation (Informal)
-	\endgl \marginnote[*-3]{Informal constructions often use the more grammaticalized \rz{lar} instead of the dummy collocative.}
+	\endgl \marginnote[*-5]{Informally, the more grammaticalized \rz{lar} is more common than a collocated dummy noun.}
 \end{gloss}
 
-Not every verb has a collocated intransitive form. For these verbs, periphrastic constructions can also serve as valency-changing operations.
+For verbs that lack a distinct collocated intransitive form, or for certain pragmatic reasons, a periphrastic construction can also serve as a valency-changing operation. The intransitive copula \rz{ot} is the most common, demoting the semantic verb to adjunct as a converb.
 
-\section{Aspect and mood}
-Periphrastic constructions handle most temporal marking in \langname{}, covering aspects and moods. The core verb of the periphrastic construction is the only finite verb of a clause, bearing all agreement, and the semantic verb is demoted to an adjunct in converbial form or as a bare infinitive with an adpositional clitic.
+\begin{gloss}
+	\a \begingl
+		\glpreamble *Nassoin kęstací. \endpreamble
+			nassoin[the king]
+			kęstací[leads]
+		\glft (Intended) “The king's in charge.”
+	\endgl
+	\a \begingl
+		\glpreamble Nassoin oc kąstetnal. \endpreamble
+			nassoin[the king]
+			oc[is]
+			kąstetnal[leading]
+		\glft “The king's in charge.”
+	\endgl \marginnote[*-8]{Ungrammatical; \rz{kęstat} is a transitive verb.}
+\end{gloss}
+
+Although rarer than object omission, subject omission is accomplished through the \rz{pit} passive. The passive construction with \rz{pit} promotes the object to subject and demotes the semantic verb to an adjunct with \rz{ez}.
+
+\section{Negation}
+Negation can be handled in multiple ways. The typical method is a periphrastic construction with the verb \rz{rek}. Other methods include the use of discourse particles \dots
 
 \begin{kaobox}[frametitle=\sc todo:]
-	Flesh this section out with more examples and more specific uses.
+	Write the section about which particles can convey negation, when, and how etc.
 \end{kaobox}
 
-\subsection{\rz{ot}}
-The verb \rz{ot} “be” has two periphrastic constructions, a \emph{perfective} and a \emph{support} construction used for focus-fronting verbs.
-
-\paragraph{Perfective}
-In the perfective construction, the semantic verb is demoted to adjunct with the preposition \rz{tę}. The perfective can be used in any time frame, although by default it does have a past-time connotation.
+\section{Aspect and mood}
+\subsection{Perfective}
+The perfective construction uses the instransitive copula \rz{ot}, demoting the semantic verb to adjunct with the preposition \rz{tę}. The perfective can be used in any time frame, although by default it does have a past-time connotation.
 
 The perfective construction generally used for events that occured over a fixed time frame, especially when a duration is given. In contrast with an unmarked verb, the perfective emphasizes sequences of events or actions done a finite number of times.
 
-\paragraph{Support}
-In the support construction, the semantic verb is demoted to adjunct as a converb. This construction is used for fronting verbs for emphasis, and does not convey any aspectual information.
-
-\subsection{\rz{sesam}}
-The verb \rz{sesam} “say” has one periphrastic construction, an irrealis.\marginnote{\rz{Sesam} is often shorted to \rz{sem} informally.}
-
-\paragraph{Irrealis}
-In the irrealis construction, the semantic verb is demoted to adjunct with the preposition \rz{tę}. The irrealis can be used in any time frame, although by default it does have future-time connotation.
+\subsection{Irrealis}
+The imperfective construction uses \rz{sem} “say, want,” demoting the semantic verb to adjunct with the preposition \rz{tę}. The irrealis can be used in any time frame, although by default it does have future-time connotation.
 
 The irrealis is used for all events that the speaker supposes might or might've occured. The construction is very general, and has broad semantic meaning---including conditional, jussive, and optative senses. In contrast with the unmarked verb, the irrealis emphasizes that the situation is not factual, but is hoped or posited to occur or have occured.
 
-\subsection{\rz{nenat}}
-The verb \rz{nenat} “crouch” has one periphrastic construction, a subjunctive.
-
-\paragraph{Subjunctive}
-In the subjunctive construction, the semantic verb is demoted to adjunct with the preposition \rz{ah}. The subjunctive construction has a more limited scope than the \rz{sesam} irrealis construction, typically expressing counterfactuals or doubt.
-
-\subsection{\rz{het}}
-The verb \rz{het} “be at” has two periphrastic constructions, a \emph{passive} and an \emph{imperfective}, the latter typically restricted to narrative contexts.
-
-\paragraph{Passive}
-In the passive construction, the semantic verb is demoted to adjunct as a converb. The \rz{het} passive is not a true passive because the verb does not change valency (\ie the \tsc{a}-like argument cannot be omitted). Instead of valency operations, the role of this construction is typically to change verbal agreement, as in (\nextx).
-
-\begin{gloss*}
-	\a \ljudge{*} \begingl
-		\glpreamble Azzár hossusarsik nassoin.\endpreamble 
-			as-zár[foreigner-\tsc{pl.dist}]
-			hassusar-s-ik[exalt-\tsc{3c»3c-prox}]
-			nassoi-n[king-\tsc{prox}]
-		\glft \textit{Intended:} “(I see) the foreigners (I've heard about) praising the king.”
-	\endgl
-	\a \begingl
-		\glpreamble Nassoin hecik azzár hossusarnat.\endpreamble
-			nassoi-n[king-\tsc{prox}]
-			het-s-ik[be.at\tsc{-3c»3c-prox}]
-			as-zár[foreigner-\tsc{pl.dist}]
-			hassusar-nat[exalt-\tsc{cvb}]
-		\glft “(I see) the king being praised by the foreigners (I've heard about).”
-	\endgl
-\end{gloss*}
-
-In (\lastx a), the hypothetical speaker intends to mark the verb as proximal to convey direct evidence, but the utterance is ungrammatical because the verb doesn't agree with its subject, \rz{azzár}. To correct this, the construction in (\lastx b) is used, which takes advantage of the passive to mark the verb phrase as proximal.
-
-\par In addition to its role shuffling agreement, the \rz{het} passive can also be used to clarify sentences that become ambiguous due to focus fronting, as in (\nextx).
-
-\begin{gloss*}
-	\a \begingl
-		\glpreamble Kanyin akakvatcik Arpatan. \endpreamble
-			Kanyi-n[\tsc{name-prox}]
-			akekvat-s-ik[tag-\tsc{3c»3c-prox}]
-			Arpat-n[\tsc{name-prox}]
-		\glft “Kanyi tagged Arpat.” \\ \textit{or} “Who Arpat tagged was Kanyi.”
-	\endgl
-	\a \begingl
-		\glpreamble Kanyin hecik Arpatan akakvatnat. \endpreamble
-			Kanyi-n[\tsc{name-prox}]
-			het-s-ik[be.at\tsc{-3c»3c-prox}]
-			Arpat-n[\tsc{name-prox}]
-			akekvat-nat[tag-\tsc{cvb}]
-		\glft “Kanyi was tagged by Arpat.”
-	\endgl
-\end{gloss*}
-
-In (\lastx a), it's not clear if Kanyi is the semantic agent or a semantic patient that's been fronted for focus. Without context, both interpretations are grammatical. The use of the passive in (\lastx b) is less ambiguously interpreted, almost always meaning that Arpat was the semantic agent.
-
-\subsection{\rz{pit}}
-\begin{kaobox}[frametitle=\sc todo:]
-    Rework the \rz{pit} passive, which currently doesn't make a lot of sense---how is it demoting stuff, when semantically you'd expect “hold” to be transitive? Maybe \rz{pit} means something else, maybe it will demote in a different way, maybe the valency is weirder...
-\end{kaobox}
-
-The verb \rz{pit} “hold” has one periphrastic construction, the mediopassive. \marginnote[*-2]{Unlike most other periphrastic verbs, \rz{pit} is rarely used outside periphrasis, having largely been replaced by \rz{akrar}.}
-
-\paragraph{Mediopassive}
-In the mediopassive construction, the semantic verb is demoted to adjunct with the preposition \rz{ez}. Unlike the \rz{het} passive, the \rz{pit} mediopassive is a true passive; the \tsc{a}-like argument does not appear.
+\subsection{Subjunctive}
+The subjunctive construction uses \rz{nenat} “crouch,” demoting the semantic verb to adjunct with the preposition \rz{ah}. The subjunctive construction has a more limited scope than the \rz{sem} irrealis construction, typically expressing counterfactuals or doubt.
