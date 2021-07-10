@@ -9,10 +9,10 @@
 
 %--- METADATA ---%
 \newcommand{\langname}{\textbf{lang₂}}
-\title[A Grammar of \langname{}]{\huge \langname{}}
-\subtitle{grammar of a constructed language}
-\author[kilenc]{\large Seth Thompson \\ \small \textit{aka} kilenc}
-\date{\small \today}
+\title[\langname{} Grammar]{\langname{}}
+\subtitle{a grammar of a constructed language}
+\author{kilenc}
+\date{\today}
 
 %--- FORMATTING ---%
 % font
@@ -71,9 +71,17 @@
 \frontmatter
 
 % title page
-\KOMAoptions{twoside=semi}
-\maketitle
-\KOMAoptions{twoside=false}
+\makeatletter
+\begin{titlepage} \centering
+	\hspace{0pt} \vfill
+	{\huge \@title } \\\medbreak 
+	{\large \bf sketch grammar of a constructed language} \\\bigbreak
+	\includegraphics[width=0.25\linewidth]{lang2-lion-small.png} \\\bigbreak
+	{\large Seth Thompson \\ \small \emph{a.k.a.} kilenc} \\\bigbreak
+	{\small \@date}
+	\vfill \hspace{0pt}
+\end{titlepage}
+\makeatother
 
 % toc
 \setlength{\textheight}{23cm} % Manually adjust the height of the ToC pages
