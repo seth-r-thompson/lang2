@@ -1,6 +1,6 @@
 \documentclass[fontsize=12pt,twoside=false,numbers=noenddot]{class/kaobook}
 
-\usepackage{expex}
+\usepackage[aligned, nojunctures, nochapters]{class/baarux}
 \usepackage{fontspec}
 \usepackage{booktabs}
 \usepackage{caption}
@@ -39,6 +39,7 @@
 
 % shortcuts for common stuff
 \newcommand{\tsc}[1]{\textsc{#1}}
+\newcommand{\tit}[1]{\textit{#1}}
 \newcommand{\tbs}{\textbackslash}
 \newcommand{\ttd}{\char“~}
 \newcommand{\tss}[1]{\textsuperscript{#1}}
@@ -47,24 +48,18 @@
 \renewcommand{\sc}{\scshape}
 
 % glossing style
-\definelingstyle{gloss}{glstyle=nlevel, everyglpreamble=\bf\rzc, aboveglftskip=-8pt, belowglpreambleskip=-8pt, aboveexskip=0pt, belowexskip=-4pt}
-\definelingstyle{widegloss}{glstyle=nlevel, everyglpreamble=\bf\rzc, aboveglftskip=0pt,belowglpreambleskip=0pt, aboveexskip=8pt, belowexskip=4pt}
+\baaruset{script.markup=\rzc\bf, bits.markup=\it, gloss.markup=\normalfont, source.markup=\footnotesize\sc\baaruparens, cellspacing=.5em}
 
-\newenvironment{gloss}{
-	\pex[lingstyle=gloss]%
-}{%
-	\xe%
-}%
-
-\newenvironment{gloss*}{
+\newenvironment{examples*}{
 	\begin{minipage}{164.6mm}%
-	\pex[lingstyle=widegloss]%
+	\examples%
 }{%
-	\xe%
+	\endexamples%
 	\end{minipage}%
 }%
 
-\newcommand{\smoyd}[2]{\trailingcitation{\footnotesize \href{#1}{(\tsc{5moyd \#{}#2})}}}
+\newcommand{\smoyd}[2]{(\href{#1}{5moyd \#\ignorespaces#2})}
+\newbaarulinetype{citation}{smoyd}{\footnotesize\sc\smoyd}
 
 \begin{document}
 
@@ -74,7 +69,7 @@
 \begin{titlepage} \centering
 	\hspace{0pt} \vfill
 	{\huge \langname{} } \\\medbreak 
-	{\large \bf sketch grammar of a constructed language} \\\bigbreak
+	{\large \bf grammar of a constructed language} \\\bigbreak
 	\includegraphics[width=0.25\linewidth]{lang2-lion.png} \\\bigbreak
 	{\large Seth Thompson \\ \small \emph{a.k.a.} kilenc} \\\bigbreak
 	{\small \today}
