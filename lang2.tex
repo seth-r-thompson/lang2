@@ -17,7 +17,8 @@
 %--- FORMATTING ---%
 % font
 \setmainfont{LibertinusSans}[Extension = .otf , Path = ./fonts/ , UprightFont = *-Regular-Custom , BoldFont = *-Bold-Custom , ItalicFont = *-Italic-Custom]
-\setmonofont{Iosevka}[Scale=MatchLowercase]
+% \setmonofont{Iosevka}[Scale=MatchLowercase]
+\setmonofont{Menlo}[Scale=MatchLowercase]
 
 % graphics
 \graphicspath{{images/}} % image paths
@@ -53,6 +54,15 @@
 \newenvironment{examples*}{
 	\begin{minipage}{164.6mm}%
 	\examples%
+}{%
+	\endexamples%
+	\end{minipage}%
+}%
+
+\newenvironment{example*}{
+	\begin{minipage}{164.6mm}%
+	\examples%
+	\ex%
 }{%
 	\endexamples%
 	\end{minipage}%
