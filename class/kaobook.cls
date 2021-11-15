@@ -31,7 +31,6 @@
 	\oldfrontmatter % First of all, call the old command
 	\pagestyle{plain.scrheadings} % Use a plain style for the header and the footer
 	\pagelayout{wide} % Use a wide page layout
-	% \sloppy % Uncomment to better break long lines
 }
 
 %------------------------------------------------
@@ -43,6 +42,7 @@
 	\pagestyle{scrheadings} % Use a fancy style for the header and the footer
 	\pagelayout{margin} % Use a 1.5 column layout
 	\setchapterstyle{kao} % Choose the default chapter heading style
+	\sloppy % Breaks long lines MS word style
 }
 %------------------------------------------------
 
@@ -51,6 +51,7 @@
 \renewcommand{\appendix}{
 	\oldappendix % Call the old command
 	\bookmarksetup{startatroot} % Reset the bookmark depth
+	\sloppy % Breaks long lines MS word style
 }
 
 %------------------------------------------------
