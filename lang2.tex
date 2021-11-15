@@ -45,6 +45,7 @@
 \renewcommand{\bf}{\bfseries}
 \renewcommand{\it}{\itshape}
 \renewcommand{\sc}{\scshape}
+\newcommand{\mr}[1]{\multirow{2}{*}{#1}}
 
 % glossing style
 \baaruset{script.markup=\rzc\bf, bits.markup=\it, gloss.markup=\normalfont, source.markup=\footnotesize\sc\baaruparens, cellspacing=.5em}
@@ -90,32 +91,23 @@
 \etocstandardlines % toc lines as if etoc was not loaded
 \tableofcontents 
 
-% document start
-\pagelayout{margin}
-
-% introduction
-\setchapterpreamble[u]{\margintoc}
-\chapter{Introduction}
-\section{Origins}
-\langname{} is an \emph{a priori} artlang originally conceived to fulfill a speedlang challenge, then modified to handle a relay, then finally molded into its own project. Although I had no clear motivations in mind when beginning it, I found that the confluence of random decisions---the Gleb-generated inventory, challenge stipulations, the early translation choices---made the project into something I really enjoyed.
-
-\section{Goals}
-The overarching goal is to create something that is cool to me. The project is meant to be naturalistic, but when naturalism conflicts with aesthetic, aesthetic will be prioritized.
-
-A primary way to grow this language and develop new ideas will be through translation of poetry and scientific journals. I hope that these will push the limits of my syntactical rules while also developing an interesting corpus. I'll also try to use \tsc{5moyd}s and hopefully at some point a journal to expand my ability to speak the language and get an intuitive sense for what constructions it prefers.
-
-As I develop this conlang, my goals will be to explore analytic constructions and syntactic minutiae, write in-depth documentation of how information structure manifests in the language, and produce a robust dictionary and corpus.
-
-\section{Lore}
-\langname{} is set in a worldbuilding project I create as a hobby. The language is an isolate spoken on the eastern coast of a peninsula, once the language of city-states and now a common language throughout a number of coastal countries. It is heavily influenced by East Cape, the \emph{de jure} language of the peninsula, and other languages of trade. The world the speakers know is analogous to our 1930s.
-
 \mainmatter
 
-\pagelayout{wide} \part{Phonology} \pagelayout{margin}
+\pagelayout{wide}
+\part{Introduction}
+\pagelayout{margin}
+
+\input{chapters/introduction.tex}
+
+\pagelayout{wide}
+\part{Phonology}
+\pagelayout{margin}
 
 \input{chapters/phono.tex}
 
-\pagelayout{wide} \part{Morphosyntax} \pagelayout{margin}
+\pagelayout{wide}
+\part{Morphosyntax}
+\pagelayout{margin}
 
 \input{chapters/nouns.tex}
 
@@ -125,7 +117,9 @@ As I develop this conlang, my goals will be to explore analytic constructions an
 
 \input{chapters/syntax.tex}
 
-\pagelayout{wide} \part{Appendix} \pagelayout{margin}
+\pagelayout{wide}
+\part{Appendix}
+\pagelayout{margin}
 
 \appendix
 
@@ -134,6 +128,5 @@ As I develop this conlang, my goals will be to explore analytic constructions an
 \input{chapters/lexicon.tex}
 
 \backmatter
-\pagelayout{wide}
 
 \end{document}

@@ -1,0 +1,108 @@
+\setchapterpreamble[u]{\margintoc}
+\chapter{Background}
+\section{Origins}
+\langname{} is an \emph{a priori} artlang originally conceived to fulfill a speedlang challenge, then modified to handle a relay, then finally molded into its own project. Although I had no clear motivations in mind when beginning it, I found that the confluence of random decisions---the Gleb-generated inventory, challenge stipulations, the early translation choices---made the project into something I really enjoyed.
+
+\section{Goals}
+The overarching goal is to create something that is cool to me. The project is meant to be naturalistic, but when naturalism conflicts with aesthetic, aesthetic will be prioritized.
+
+A primary way to grow this language and develop new ideas will be through translation of poetry and scientific journals. I hope that these will push the limits of my syntactical rules while also developing an interesting corpus. I'll also try to use \tsc{5moyd}s and hopefully at some point a journal to expand my ability to speak the language and get an intuitive sense for what constructions it prefers.
+
+As I develop this conlang, my goals will be to explore analytic constructions and syntactic minutiae, write in-depth documentation of how information structure manifests in the language, and produce a robust dictionary and corpus.
+
+\section{Lore}
+\langname{} is set in a worldbuilding project I create as a hobby. The language is an isolate spoken on the eastern coast of a peninsula, once the language of city-states and now a common language throughout a number of coastal countries. It is heavily influenced by East Cape, the \emph{de jure} language of the peninsula, and other languages of trade. The world the speakers know is analogous to our 1930s.
+
+\setchapterpreamble[u]{\margintoc}
+\chapter{Overview}
+\section{Typology}
+\langname{} is largely head-initial.
+
+There are five total word classes in \langname{}. Content words are largely nouns and verbs, with a small closed set of adjectives. Function words are prepositions and particles.
+
+\section{Syntax}
+A basic intransitive clause in \langname{} is composed of a subject followed by a predicate.  
+
+\begin{examples}
+    \baarucols2
+    \ex
+        \script Kanyi hec.
+        \bits Kanyi hec
+        \gloss Kanyi {is there}
+        \tr It's Kanyi.
+    \ex
+        \script Mavan tahęci.
+        \bits mavan tahęci
+        \gloss {the cat} stretches
+        \tr The cat's stretching.
+\end{examples}
+
+In a transitive clause, the object usually follows the verb. Any other dependents are also typically after the object, as in (\ref{ex:word_order_adjunct}).
+
+\begin{examples}
+    \ex
+        \script Nassoin kąsteci kagesan.
+        \bits nassoin kąsteci kagesan
+        \gloss {the king} leads {the army}
+        \tr The king leads the army.
+    \ex \label{ex:word_order_adjunct}
+        \script Lalan kirays sapan h-tesan.
+        \bits lalan kiray sapan ah=tesan
+        \gloss auntie finds {the dog} on={the beach}
+        \tr Auntie's looking for the dog on the beach.
+\end{examples}
+
+\section{Morphology}
+
+\begin{kaobox}[frametitle=\sc todo:]
+    Need to finalize the morphological forms etc etc. The main thing is figuring out stress patterns; might need to do some dreaded diachronics.
+\end{kaobox}
+
+Nouns inflect for number and deixis.\marginnote{Deixis is perhaps better characterized as nominal evidentiality; see §\ref{sec:deixis}.}
+
+\begin{table}[h] \centering
+    \begin{tabular}{c|ccc}
+        \toprule
+        & \bf Generic & \bf Proximal & \bf Distal \\
+        \midrule
+        \bf \sc sg & \it\rzc metka & \it\rzc metkan & \it\rzc matkó \\
+        \bf \sc pl & \it\rzc matkozar & \it\rzc métkarran & \it\rzc metkazár \\
+        \bottomrule
+    \end{tabular}
+    \caption{Inflection \rz{metka} “bowl”}
+    \label{tab:inflect_noun}
+\end{table}
+
+Verbs inflect for person and deictic agreement.
+
+\begin{table}[h] \centering
+    \begin{tabular}{c|ccc}
+        \toprule
+        & \bf Generic & \bf Proximal & \bf Distal \\
+        \midrule
+        \bf \sc 1.ag & \it\rzc kę́statr & \it\rzc kąstetri & \it\rzc kęstatŕ \\
+        \bf \sc 1 & \it\rzc kę́statrs & \it\rzc kęstatrci & \it\rzc kęstatŕs \\
+        \bf \sc 2 & \it\rzc kę́stata & \it\rzc kęstatai & \it\rzc kęstatá \\
+        \bf \sc 3c & \it\rzc kęstac & \it\rzc kąsteci & \it\rzc kęstatés \\
+        \bf \sc 3n & \it\rzc kęstacz & \it\rzc kąsteczi & \it\rzc kęstatóz \\
+        \bf \sc 3n:1 & \it\rzc késtatns & \it\rzc kęstatnsi & \it\rzc kęstatńs \\
+        \bf \sc refl & \it\rzc kę́statak & \it\rzc kęstatki & \it\rzc kęstaták \\
+        \bottomrule
+    \end{tabular}
+    \caption{Inflection \rz{kęstat} “lead”}
+    \label{tab:inflect_verb}
+\end{table}
+
+There are also two nonfinite forms, the bare infinitive and the converb.
+
+\begin{table}[h] \centering
+    \begin{tabular}{cc}
+        \toprule
+        \bf Bare & \bf Converb \\
+        \midrule
+        \it\rzc kęstat & \it\rzc kąstettal \\
+        \bottomrule
+    \end{tabular}
+    \caption{Nonfinite forms of \rz{kęstat} “lead”}
+    \label{tab:inflect_verb_nonfinite}
+\end{table}
