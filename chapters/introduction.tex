@@ -16,9 +16,9 @@ As I develop this conlang, my goals will be to explore analytic constructions an
 \setchapterpreamble[u]{\margintoc}
 \chapter{Overview}
 \section{Typology}
-\langname{} is largely head-initial.
+\langname{} is largely head-initial: verb phrases are broadly verb-object, noun phrases noun-modifier, and prepositional phrases preposition-complement. This pattern holds rather consistently throughout the language, but there are some exceptions, most notably a prominent focus-fronting system.\marginnote{Focus fronting is discussed further in §...}
 
-There are five total word classes in \langname{}. Content words are largely nouns and verbs, with a small closed set of adjectives. Function words are prepositions and particles.
+There are five total word classes in \langname{}. Most content words are nouns and verbs, but there is a small, closed set of adjectives. Function words are prepositions and particles.
 
 \section{Syntax}
 A basic intransitive clause in \langname{} is composed of a subject followed by a predicate.  
@@ -37,7 +37,7 @@ A basic intransitive clause in \langname{} is composed of a subject followed by 
         \tr The cat's stretching.
 \end{examples}
 
-In a transitive clause, the object usually follows the verb. Any other dependents are also typically after the object, as in (\ref{ex:word_order_adjunct}).
+In a neutral transitive clause, the object follows the verb. Any other dependents are also typically after the object, as in (\ref{ex:word_order_adjunct}).
 
 \begin{examples}
     \ex
@@ -46,11 +46,13 @@ In a transitive clause, the object usually follows the verb. Any other dependent
         \gloss {the king} leads {the army}
         \tr The king leads the army.
     \ex \label{ex:word_order_adjunct}
-        \script Lalan kirays sapan h-tesan.
-        \bits lalan kiray sapan ah=tesan
-        \gloss auntie finds {the dog} on={the beach}
+        \script Lalan kiraysi sapan h-tesan.
+        \bits lalan kiraysi sapan ah=tesan
+        \gloss auntie {looks for} {the dog} on={the beach}
         \tr Auntie's looking for the dog on the beach.
 \end{examples}
+
+In some clauses that are more grammatically or informationally marked, other orders are found. Such orders are discussed further in §...
 
 \section{Morphology}
 
@@ -58,7 +60,7 @@ In a transitive clause, the object usually follows the verb. Any other dependent
     Need to finalize the morphological forms etc etc. The main thing is figuring out stress patterns; might need to do some dreaded diachronics.
 \end{kaobox}
 
-Nouns inflect for number and deixis.\marginnote{Deixis is perhaps better characterized as nominal evidentiality; see §\ref{sec:deixis}.}
+Nouns inflect for number and deixis.\marginnote{Deixis is perhaps better characterized as nominal evidentiality; see §\ref{sec:deixis}.} Although the generic singular is the citation form, the proximal form is the most common in spoken or written corpuses.
 
 \begin{table}[h] \centering
     \begin{tabular}{c|ccc}
@@ -66,12 +68,28 @@ Nouns inflect for number and deixis.\marginnote{Deixis is perhaps better charact
         & \bf Generic & \bf Proximal & \bf Distal \\
         \midrule
         \bf \sc sg & \it\rzc metka & \it\rzc metkan & \it\rzc matkó \\
-        \bf \sc pl & \it\rzc matkozar & \it\rzc métkarran & \it\rzc metkazár \\
+        \bf \sc pl & \it\rzc matkozr & \it\rzc matkonzr & \it\rzc metkazŕ \\
         \bottomrule
     \end{tabular}
     \caption{Inflection of \rz{metka} “bowl”}
     \label{tab:inflect_noun}
 \end{table}
+
+\begin{kaobox}[frametitle=\sc todo:]
+    Maybe the plural is some sort of clitic, too...
+    Attaching at right edge of phrase, and after stuff like -\rz{n}, but still phonologically part of the word, so it gets distal stress.
+    
+    Or -\rz{n} attaches right after root---harder to diachronically justify, unless the plural is newer than the agreement. Maybe the plural is some kinda circumfix? -\rz{z} + -\rz{r}, where -\rz{n} attaches between?
+\end{kaobox}
+
+Modifiers agree with their head nouns for deixis. This includes adjectives (like \rz{ócaa}), appositive nouns (like \rz{mulkas}), and pronouns (like \rz{rat}).
+
+\begin{example}
+    \script mavá ocaá mulkás rát
+    \bits mavá ocaá mulkás rát
+    \gloss cat\tbs\tsc{dist} tall\tbs\tsc{dist} fur\tbs\tsc{dist} me\tbs\tsc{dist}
+    \tr my big fuzzy cat (I haven't met yet)
+\end{example}
 
 Verbs inflect for person and deictic agreement.
 
@@ -92,6 +110,10 @@ Verbs inflect for person and deictic agreement.
     \caption{Inflection of \rz{kęstat} “lead”}
     \label{tab:inflect_verb}
 \end{table}
+
+\begin{kaobox}[frametitle=\sc todo:]
+    Not sure if I like the initial stress for generic forms; maybe they just have regular stress rules.
+\end{kaobox}
 
 There are also two nonfinite forms, the bare infinitive and the converb.
 
