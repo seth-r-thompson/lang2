@@ -31,26 +31,49 @@
 %}
 
 % print-style definitions
+% \newcommand{\entry}[3][]{%
+% \begingroup%
+% \setcounter{sense}{1}%
+% \setkeys{entry}{#1}%
+% \par \begin{minipage}{\columnwidth}%
+% 	\textbf{\rzc #2}%
+% 	\ifdefempty{\entry@pos}{}{\enskip•\enskip {\footnotesize\it\entry@pos}}%
+% 	\ifdefempty{\entry@sound}{}{\enskip•\enskip {\footnotesize\entry@sound}}%
+% 	\ifdefempty{\entry@etym}{}{\enskip←\enskip {\footnotesize\entry@etym}}%
+% 	\ifdefempty{\entry@note}{}{\enskip•\enskip {\footnotesize\entry@note}}%
+% 	\enskip•\enskip#3%
+% \end{minipage}%
+% \endgroup%
+% }
+
+% \newcounter{sense}
+% \NewDocumentCommand{\sense}{o}{%
+% \ifnum\the\value{sense}>1\enskip\fi%
+% 	\textbf{\arabic{sense}}\enskip%
+% 	\IfNoValueTF{#1}{}{\textit{#1}}%
+% \stepcounter{sense}%
+% }
+
 \newcommand{\entry}[3][]{%
 \begingroup%
 \setcounter{sense}{1}%
 \setkeys{entry}{#1}%
 \par \begin{minipage}{\columnwidth}%
 	\textbf{\rzc #2}%
-	\ifdefempty{\entry@pos}{}{\enskip•\enskip {\footnotesize\it\entry@pos}}%
-	\ifdefempty{\entry@sound}{}{\enskip•\enskip {\footnotesize\entry@sound}}%
-	\ifdefempty{\entry@etym}{}{\enskip←\enskip {\footnotesize\entry@etym}}%
-	\ifdefempty{\entry@note}{}{\enskip•\enskip {\footnotesize\entry@note}}%
-	\enskip•\enskip#3%
+	\ifdefempty{\entry@pos}{}{ • {\footnotesize\it\entry@pos}}%
+	\ifdefempty{\entry@sound}{}{ • {\footnotesize\entry@sound}}%
+	\ifdefempty{\entry@etym}{}{ ← {\footnotesize\entry@etym}}%
+	\ifdefempty{\entry@note}{}{ • {\footnotesize\entry@note}}%
+	\ • #3%
 \end{minipage}%
 \endgroup%
 }
 
 \newcounter{sense}
 \NewDocumentCommand{\sense}{o}{%
-\ifnum\the\value{sense}>1\enskip\fi%
-	\textbf{\arabic{sense}}\enskip%
-	\IfNoValueTF{#1}{}{\textit{#1}}%
+\ifnum\the\value{sense}>1 \fi%
+	\textbf{\arabic{sense}} %
+	\IfNoValueTF{#1}{}{\ {#1}}%
 \stepcounter{sense}%
 }
 
