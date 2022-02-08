@@ -1,45 +1,115 @@
 \setchapterpreamble[u]{\margintoc}
 \chapter{Clauses}
-Although the base-generated word order in \langname{} is SVO, this order rarely surfaces due to aggressive focus fronting. The most proximal, most newsworthy information is placed in the front of an utterance in first position. As a consequence, \langname{} is V2 order, mandating that a finite verb always be in second position. Adjuncts, including demoted verbal constructions, typically come after the core arguments of the verb. \marginnote{The most common word order in simple declarative sentences is SXOV or VXOS.} Often, however, the order of elements in a clause is determined by focality and evidentiality.
+The base-generated word order in \langname{} is SVO. Adjuncts, including demoted verbal constructions, typically come after the core arguments of the verb.
 
-\section{Fronting}
-The most likely phrases to be fronted are proximal or directly evident noun phrases,\marginnote{Often, the fronted element will be the conversational focus.} followed by distal or indirectly evident noun phrases. Generic noun phrases are rarely fronted except in fixed constructions.
+\section{Fronting} \label{sec:fronting}
+\langname{} allows frequent focus fronting. The most proximal, most newsworthy information is placed in the front of an utterance in first position. Both arguments and adjuncts can be fronted, moving other arguments and adjuncts to after the verb. 
 
-\langname{} doesn't have explicit role-marking, so it's not always clear if a fronted noun phrase is subject or object. Various structures, including verb agreement and passives, help provided redundancy when context is not enough.
+\begin{subexamples}
+    \ex
+        \script rat Mansatrs paltan t-ąk.
+        \bits rat mansatrs paltan tę=ąk
+        \gloss 1 {leave for} house:KN to=eat
+        \tr I'm going home to eat.
+    \ex
+        \script t-Ąk mansatrs paltan rat.
+        \bits tę=ąk mansatrs paltan rat
+        \gloss to=eat {leave for} home 1
+        \tr I'm going home \emph{to eat}.
+\end{subexamples}
 
-% \section{Extraposition}
-% When a content-heavy phrase needs to be fronted, a dummy noun is often used to allow right-branching extraposition. The dummy noun is lexically dependent, but the generic nouns \rz{lar} or \rz{manc} can also be used, although they may sound stilted for some verbs.
+The most likely phrases to be fronted are referents marked for indirect evidence \marginnote{Indirect evidence correlates with the conversational focus.}. Occasionally, referents marked for direct evidence will be fronted, typically to establish them as the topic. Generic noun phrases are rarely fronted except in fixed constructions.
 
-% % \begin{gloss*}
-% %     \begingl
-% %         \glpreamble osc Armę́ kirąyamik isyusan ocoan im nassoi kęstat ezzar vęci. \endpreamble
-% %             osc[\tsc{prep}]
-% %             armę́[\tsc{dmy}]
-% %             kirąyamik[investigate]
-% %             {isyusan ocoan}[special:tribune]
-% %             im[\tsc{prep}]
-% %             nassoi[king]
-% %             kęstat[lead]
-% %             ezzar[\tsc{assoc}]
-% %             vęci[mercenary]
-% %         \glft “What the special tribune is investigating is the king's use of mercenaries.”
-% %     \endgl
-% % \end{gloss*}
+\paragraph{Clefting}
+If a subject needs to be fronted, then a cleft construction is used. The most common verb to use is \rz{ot}, but sometimes others are used, especially in literature.
 
-%\xe
-%\begingl
-%\glpreamble \endpreamble
-%???[\tsc{expl}]
-%risk-ǫ[\tsc{aux.neg-dist}]
-%???[2]
-%???[be.familiar]
-%how-to[subj-clause]
-%???-ya[friend-\tsc{prox}]
-%???[go]
-%???[to.here]
-%???=im=tę[house=\tsc{poss=prep}]
-%rat[1]
-%\glft “It's someone you don't know, the friend that will come to our house.”
-%\smoyd{https://www.reddit.com/r/conlangs/comments/ithoza/1330th_just_used_5_minutes_of_your_day/}{1330}
-%\endgl
-%\xe
+\begin{example}
+    \script rat Otr. rat Mansatrs paltan t-ąk.
+    \bits rat otr rat mansatrs paltan tę=ąk
+    \gloss 1 be 1 {leave for} house:KN to=eat
+    \tr It's me, \emph{I'm} going home to eat.
+\end{example}
+
+The clefting construction is also common for non-subjects to particularly convey contrastive focus.
+
+\section{Subordination}
+Subordination in \langname{} can be complicated because verbs can't take other verbs as arguments. Strategies typically include asyndeton or prepositions.
+
+\subsection{Complementation}
+The two most common types of complementation are \rz{im}-complements and \rz{su}-complements.
+
+\paragraph{\rz{im}-complements}
+The \rz{im}-complement is an object raising construction, used only for transitive verbs. The complement clause's subject is raised to the object of the matrix clause,\marginnote{The raised object satisfies the valency requirement of the verb.} and the complement predicated attaches to the raised subject as a prepositional phrase with \rz{im}.
+
+\begin{example}
+    \script Amassaiznr semsi nassoin m-kęstat vęci
+    \bits amassaiznr semsi nassoin im=kęstat vęci
+    \gloss bureaucracy wants king to=lead mercenaries
+    \tr The cabinet wants the king to hire mercenary forces.
+\end{example}
+
+Other prepositions can take complements, too, but those are typically lexically determined by the verb.
+
+\paragraph{\rz{su}-complements}
+The \rz{su}-complement is a somewhat more flexible than the \rz{im}-complement. \rz{Su} simply introduces the complement clause.
+
+\begin{example}
+    \script egi Lalan oci semnal s-ossat rat.
+    \bits egi  lalan  oci semnal  su=ossat rat
+    \gloss just auntie is wanting to=1 grow
+    \tr Auntie just wants me to keep growing up.
+\end{example}
+
+As a stranded preposition, \rz{su} can essentially act like a verbal argument. However, it cannot actually fill the valency slot, so the verb must be intransitive or made intransitive through some passive, antipassive, or other means.
+
+Unlike \rz{im}-complements, \rz{su}-complements allow equideletion.
+
+\begin{example}
+    \script Kipiran oci semnal s-tahąt z-ista.
+    \bits kipiran oci semnal su=tahąt ez=ista
+    \gloss teen  be wanting to=pray to=grace
+    \tr The teen wants to bless the food.
+\end{example}
+
+\subsection{Speech reporting}
+Directly reporting speech with an exact quote is accomplished through particles and other typical complementation strategies, while indirect speech reporting used a participle.
+
+\paragraph{Quoting}
+The quotative particle \rz{kai} is the most common way of quoting speech.
+
+\begin{example}
+    \script sec Oci. kai: Yiazin rat otr.
+    \bits sec oci kai yiazin rat otr
+    \gloss 3 be \tsc{QT} thief 1 be
+    \tr He said, `I am the thief.'
+\end{example}
+
+The speech verb can take an adjunct with \rz{tę}. The adjunct specifies who's being spoken to.
+
+\begin{example}
+    \script sec Oci t-kęsa. kai: Yiazin rat otr.
+    \bits sec oci tę=kęsa kai yiazin rat otr
+    \gloss 3 be to=soldier \tsc{QT} thief 1 be
+    \tr He said to the soldier, `I am the thief.'
+\end{example}
+
+Informally, a construction with the particle \rz{occu} is used.
+
+\begin{example}
+    \script sec Pici occu yiazin rat otr.
+    \bits sec pici occu yiazin rat otr
+    \gloss 3 be \tsc{QT} thief 1 be
+    \tr He was like, `I am the thief.'
+\end{example}
+
+\paragraph{Reporting}
+Participle complements are used for indirect speech reporting. The participle complement is the reported speech. 
+
+\begin{example}
+    \script Kęsan segi hetnal paknalác z-Natra.
+    \bits kęsan segi  hetnal paknalác z=Natra
+    \gloss hero  says  being.at inn in=Natra
+    \tr The hero says there's an inn at Natra.
+\end{example}
+
+This construction is typically used only with the verb \rz{sem}.

@@ -1,78 +1,87 @@
 \setchapterpreamble[u]{\margintoc}
 \chapter{Verbs}
-Like the noun phrase, the \langname{} verb phrase is mostly analytic, and inflection is largely reserved for agreement. Other parts of the verb complex are handled by periphrastic constructions, notably including valency operations and TAM.
+Like the noun phrase, the \langname{} verb phrase is mostly analytic, and inflection is largely reserved for agreement. Other parts of the verb complex are handled by periphrastic constructions, notably valency operations and TAM.
 
 \section{Agreement}
-Verbs display agreement along two axes: \emph{deixis} and \emph{person}. Deictic agreement is only with the subject of the clause, but person agreement\marginnote[*-1]{Despite person agreement, \langname{} is rarely pro-drop.} is with both subject and the object, if the verb is transitive. Only the sole finite verb of a clause bears agreement; verbs demoted to adjuncts or arguments are always uninflected.
+Verbs display agreement along two axes: \emph{evidence} and \emph{person}. Evidence agreement is only with the subject of the clause, but person agreement\marginnote[*-1]{Despite person agreement, \langname{} rarely allows \tsc{pro}-drop.} is with both subject and the object, if the verb is transitive. Only the sole finite verb of a clause bears agreement; verbs demoted to adjuncts or arguments are always uninflected.
 
-\subsection{Person}
-In old \langname{}, verb agreement was transparently derived from cliticized pronouns. However, sound change reduced agreement endings, leading to synchronic forms that are often actually patient agreement.
-
-\begin{kaobox}[frametitle=\sc todo:]
-	How to cover morphophonological stuff? The two main ones are affrication of /t/ + /s z/ and cluster-final /s ts/ merging to [s], spelled \rz{s}.
-\end{kaobox}
+\subsection{Person} \label{sec:person_agreement}
+In old \langname{}, verbal person agreement was transparently derived from cliticized pronouns. However, sound change reduced agreement endings, leading to synchronic forms that are often actually patient agreement.
 
 \begin{margintable} \centering
 	\begin{tabular}{cc}
 		\toprule
-		\bf Morpheme & \bf Meaning \\
-		\midrule
-		\it -\rz{rc}- & \sc 1.ag \\
-		\it -\rz{r}- & \sc 1.pt \\
-		\it -\rz{a}- & \sc 2 \\
-		\it -\rz{s}- & \sc 3c \\
-		\it -\rz{z}- & \sc 3n \\
-		\it -\rz{ns}- & \tsc{1}↔\tsc{3n} \\
-		\it -\rz{k}- & \sc refl \\
+		\bf\sc 1:n & -\rz{ns} \\
+		\bf\sc 1.ag & -\rz{rc} \\
+		\bf\sc 1.pt & -\rz{r} \\
+		\bf\sc ntr & -\rz{z} \\
+		\bf\sc cmn & -\rz{s} \\
 		\bottomrule
 	\end{tabular}
-	\caption{Summary of person agreement}
-	\label{tbl:person}
+	\caption{Transitive person agreement}
+	\label{tbl:tr_person}
 \end{margintable}
 
-Except in a few outlier cases, agreement is fairly predictable from Table \ref{tbl:person}. Neuter agreement takes precedent over other morphemes when applicable. Furthermore, -\rz{a}- only appears on intransitive verbs; for transitive verbs, the appropriate agreement with the other argument is used instead. Finally, -\rz{r}- is used for intransitives,\marginnote{1st-person agreement is ergative as an accident of sound change.} not the agent form.
+If there's a neuter argument in a transitive clause, the verb will agree with that and ignore other arguments. If there's also a first-person argument, that form is used; otherwise the generic neuter is used.
 
-When attached to a finite verb without deictic agreement, person agreement morphemes are realized as short: unlike many other affixes, they do not shift stress. This realization preserves old stress patterns before the morphemes were reduced. Because of this quirk, some scholars argue that person agreement morphemes are actually clitics to which deictic affixes attach.
+\begin{example}
+	\script Kęsan ikuczi retus.
+	\bits kęsa-n ikut-z-i retus
+	\gloss soldier.CMN-KN buy-NTR-KN blade.NTR
+	\tr The soldier bought a sword.
+\end{example}
 
-\begin{kaobox}[frametitle=\sc todo:]
-	Do I want to keep this or say they got analogized? Maybe there's some weird interactions with the stress-fixing rules I've been cooking up?
-\end{kaobox}
+If there's not a neuter argument in a transitive clause, agreement is determined by person. If a first-person argument is present, agreement is selected by its role subject or object. Otherwise the generic common is used.
 
-Because \langname{} allows frequent fronting, a clause's agent and patient can become ambiguous when the agreement morphemes are not sufficient. This especially occurs with common and neuter agreement. A mediopassive\marginnote{The \rz{het} construction is not a true passive: the verb does not change valency (\ie the \tsc{a}-like argument can't be omitted).} construction formed with \rz{het} can be used to clarify such instances. In the mediopassive, the semantic verb is demoted to adjunct as a converb.
+\begin{example}
+	\script hes a Ąks lattan.
+	\bits hes a ąk-s latta-n
+	\gloss Q 2 eat-CMN paella.CMN-KN
+	\tr You ate a paella?
+\end{example}
 
-\begin{kaobox}[frametitle=\sc todo:]
-	This construction won't work anymore if \rz{het} is intransitive.
-\end{kaobox}
-
-\begin{examples*}
-	\ex \label{ex:het_agreement_ambiguous}
-		\script Kanyi akveci Arpat.
-		\bits Kanyi akveci Arpat
-		\gloss \tsc{name} tagged\tsc{:3c} \tsc{name}
-		\tr Kanyi tagged Arpat
-		\alt Who Arpat tagged was Kanyi
-	\ex \label{ex:het_agreement_clear}
-		\script Kanyi heci Arpat akvettal.
-		\bits Kanyi heci Arpat akvettal
-		\gloss \tsc{name} be\tsc{:3c} \tsc{name} tagging
-		\tr Kanyi was tagged by Arpat
-\end{examples*}
-
-In (\ref{ex:het_agreement_ambiguous}), it's not clear if Kanyi is the tagger or the focus-fronted taggee; both interpretations are grammatical. The use of the passive in (\ref{ex:het_agreement_clear}) is less ambiguously interpreted, always meaning that Arpat is the semantic agent.
-
-\subsection{Deixis}
-Generic noun forms do not have agreement morphemes, but proximal nouns demand the verbal suffix -\rz{i} and distal nouns shift stress to the final syllable.\marginnote{The stress shift is a remnant of an elided morpheme.} These suffixes are attached after person agreement suffixes. The proximal suffix -\rz{i} is often stressed itself.
-
-\begin{kaobox}[frametitle=\sc todo:]
-	Same question as earlier: do I like the stress rules for this affix? Or the way this next one preserves things?
-\end{kaobox}
-
-Due to historical stress rules, the distal agreement suffix is more fusional for some select verb forms. Although the vowel was lost from the common and neuter agreement suffixes in other forms, it remains in the distal form.
-
-\begin{margintable}[*-5] \centering
+\begin{margintable} \centering
 	\begin{tabular}{cc}
 		\toprule
-		\bf Generic & \bf Distal \\
+		\bf\sc 1 & -\rz{r} \\
+		\bf\sc 2 & -\rz{a} \\
+		\bf\sc ntr & -\rz{z} \\
+		\bf\sc cmn & -\rz{s} \\
+		\bottomrule
+	\end{tabular}
+	\caption{Intransitive person agreement}
+	\label{tbl:in_person}
+\end{margintable}
+
+Importantly, second-person agreement, -\rz{a}, only appears on intransitive verbs; for transitive verbs, the appropriate agreement with the other argument is used instead. 
+
+\paragraph{Gender} Gender agreement is the only manifestation of gender in the language, but it's often ignored in most casual speech. It's primarily a feature of the written or formal register. Thus the agreement patterns of a verb are often more straightforward in spoken \langname{}.
+
+\paragraph{Phonological processes} The agreement suffixes follow morphophonological rules as expected. For example, word-final ⫽+rt͡s⫽ is rendered as /rs/, and ⫽t+s⫽ sequences yield /t͡s/.
+
+\subsection{Reflexive}
+The reflexive takes the place of person agreement. The reflexive is the same regardless of the person of the subject.
+
+\begin{margintable} \centering
+	\begin{tabular}{cc}
+		\toprule
+		\bf\sc refl & -\rz{k} \\
+		\bottomrule
+	\end{tabular}
+	\caption{Reflexive marking}
+\end{margintable}
+
+Since it reduces a verb's valency by one argument slot, the reflexive is only valid for transitive verbs. Intransitive verbs cannot be inflected for the reflexive.
+
+\subsection{Evidence} \label{sec:evidence_agreement}
+Verbs agree with the evidence of their subject. Generic noun forms do not have agreement morphemes, but marked evidences do. Direct evidence is marked with the suffix -\rz{i}, and indirect evidence is marked by shifting stress to the final syllable of the word. These suffixes occur after person marking suffixes. 
+
+Due to historical stress rules, the indirect evidence agreement suffix is more fusional for some select verb forms. Although the vowel was lost from the common and neuter agreement suffixes in other forms, it remains in the indirect form.
+
+\begin{margintable} \centering
+	\begin{tabular}{cc}
+		\toprule
+		\bf Generic & \bf Indirect \\
 		\midrule
 		\it -\rz{s} & \it -\rz{és} \\
 		\it -\rz{z} & \it -\rz{óz} \\
@@ -81,85 +90,147 @@ Due to historical stress rules, the distal agreement suffix is more fusional for
 	\caption{Deictic forms of agreement}
 \end{margintable}
 
-Deictic agreement requires verbs to encode the same evidentiality as the subject noun phrase, but this may be infelicitous in some contexts. The \rz{het} construction can also be used to change verbal agreement.
+\paragraph{Speech participants} First-person and second-person subjects don't require any evidence agreement suffix; they're left unmarked. However, if the verb is marked for the reflexive, these persons will use direct evidence agreement.
 
-\begin{examples*}
-	\ex \label{ex:no_evidence_shift}
-		\script:* Azzŕ hossusassi nassoin.
-		\bits as-zŕ hassusal-s-i nassoi-n
-		\gloss foreigner-\tsc{pl.dist} exalt-\tsc{3c-prox} king-\tsc{prox}
-		\intended (I see) the foreigners (I've heard about) praising the king.
-	\ex \label{ex:het_evidence_shift}
-		\script Nassoin heci azzŕ hossusaltal.
-		\bits nassoi-n het-s-i as-zŕ hossusaltal
-		\gloss king-\tsc{prox} be-\tsc{3c-prox} foreigner-\tsc{pl.dist} exalting
-		\tr (I see) the king being praised by the foreigners (I've heard about).
-\end{examples*}
-
-In (\ref{ex:no_evidence_shift}), the speaker intends to mark the verb as proximal to convey direct evidence, but the utterance is ungrammatical because the verb doesn't agree with its subject, \rz{azzŕ}. To correct this, the construction in (\ref{ex:het_evidence_shift}) is used, which takes advantage of the passive to mark the verb phrase as proximal.
-
-\section{Converb}
-The converb form of a verb is used for simultaneous action. The converb is commonly used to describe the manner of the main clause, and is also commonly used in periphrastic constructions. The converbial suffix is \rz{-tal}.
-
-\begin{kaobox}[frametitle=\sc todo:]
-	Work more on the converb and flesh this out with examples. Might change the morphophonemic form. I've flip-flopped on this one a billion times so maybe I'll do some different ones for different stems.
-\end{kaobox}
-
-\section{Transitivity}
-Transitivity is lexically set. There are three valency classes a verb can fall into: \emph{transitive}, \emph{intransitive}, and \emph{pseudo-transitive}. Transitive verbs always have two arguments and intransitive verbs always have one.\marginnote{All valency classes allow a number of optional but often collocated adjuncts, introduced as prepositional phrases or converbs.} Pseudo-transitive verbs also take more than one argument, but are morphologically intransitive, and as such their additional argument is a prepositional phrase that cannot be ommitted. 
-
-Non-finite verbs of each type do not have fixed valence and can omit all arguments. In some periphrastic constructions, those arguments are still required by the new finite verb. However, other constructions, and general adjectival or adverbial use, often appear without overt arguments.
-
-There are few methods to decrease a verb's valency, which is usually done when an argument is sufficiently clear from context. In contrast, there are no methods to increase a verb's valency.
-
-The most common method of valency reduction is dummy objects. Most transitive verbs have a collocated dummy object.\marginnote{Some verbs have multiple collocations for different senses.} Prescriptive convention holds that verbs exhibit person agreement with these objects, but in speech these verbs are often treated as morphologically intransitive, as in (\ref{ex:fake_intransitive}). Although colloquial, this phenomenon points to further grammaticalization of dummy objects.
-
-\begin{subexamples}
-	\baarucols2
-	\ex
-		\script a Semsi sora.
-		\bits a semsi sora
-		\gloss you say:\tsc{3c} \tsc{dmy}
-		\tr You're talking.
-	\ex \label{ex:fake_intransitive}
-		\script a Sémai lar.
-		\bits a sémai lar
-		\gloss you say:\tsc{2} \tsc{dmy}
-		\tr You're talking. 
-\end{subexamples} \marginnote[*-5]{Informally, \rz{lar} is more common than collocative dummy nouns.}
-
-For verbs that lack a distinct collocated intransitive form, or for certain pragmatic reasons, a periphrastic construction can also serve as a valency-changing operation. The intransitive copula \rz{ot} is the most common, demoting the semantic verb to adjunct as a converb.
+\paragraph{Propositional evidentiality} Evidence agreement is simply indexing; it doesn't make any assertion about the evidence of the verb or clause itself. 
 
 \begin{example}
-	\script Nassoin oci kąstetal.
-	\bits nassoin oci kąstetal
-	\gloss {the king} is leading
-	\tr The king's in charge.
+	\script Lalan haramsi mensapŕ.
+	\bits lala-n haram-s-i mensapŕ
+	\gloss auntie-KN make-CMN-KN jacket:UN
+	\tr Auntie (who I know) bought a jacket (and I may or may not have witnessed her do it) 
 \end{example}
 
-Although rarer than object omission, subject omission is accomplished through the \rz{pit} passive. The passive construction with \rz{pit} promotes the object to subject and demotes the semantic verb to an adjunct with \rz{ez}.
+A cleft construction is typically used to focus the evidence of the verb itself, as in (\ref{ex:verb_evidence}).
 
-\begin{kaobox}[frametitle=\sc todo:]
-	Some more info about using the reflexive to reduce valency, too.
-\end{kaobox}
+\begin{example}
+	\label{ex:verb_evidence}
+	\script Manás oci haradal; solr: lalan saci mensapŕ.
+	\bits manás ot-és haradal solr lala-n sac-i mensapŕ
+	\gloss DMY:UN be-UN making and aunti-KN did-KN jacket:UN
+	\tr I heard that Auntie bought a jacket.
+\end{example}
+
+The cleft makes uses of two clauses; the first is marked for the evidence of the proposition, and the second clarifies the referent.
+
+\section{Transitivity}
+Transitivity is lexically set, and verbs are strict about the number of arguments they can have. There are three valency classes a verb can fall into: \emph{transitive}, \emph{intransitive}, and \emph{pseudo-transitive}. Transitive verbs always have two arguments and intransitive verbs always have one.\marginnote{All valency classes allow a number of optional but often collocated adjuncts, introduced as prepositional phrases or converbs.} Pseudo-transitive verbs also take more than one argument, but are morphologically intransitive, and as such their additional argument is a prepositional phrase that cannot be omitted. 
+
+\subsection{Reducing valency}
+There are few methods to decrease a verb's valency, which is usually done to allow certain focal constructions or when an argument is sufficiently clear from context.
+
+\paragraph{Passives and antipassives} 
+The most common method of reducing a verb's valency is through a periphrastic construction using a copula.
+
+\begin{subexamples}
+	\ex
+		\script Piran yiaci kemu.
+		\bits piran yiaci kemu
+		\gloss kid:KN steal {fruit slice}
+		\tr The kid stole some fruit slices.
+	\ex \label{ex:antipassive}
+		\script Piran oci yiattal.
+		\bits piran oci yiattal
+		\gloss kid:KN is stealing
+		\tr The kid stole.
+	\ex \label{ex:passive}
+		\script Kemu hec yiattal.
+		\bits kemu hec yiattal
+		\gloss {fruit slice} is stealing
+		\tr Some fruit slices were stolen.
+\end{subexamples}
+
+\marginnote{These constructions use the participle because nonfinite verb forms can omit arguments. See §\ref{sub:nonfinite_argument_omission}.}
+The antipassive in (\ref{ex:antipassive}) uses \rz{ot} and the participle; the object is removed. The passive in (\ref{ex:passive}) uses \rz{het} and the participle; the subject is removed and the former object is promoted.
+
+\paragraph{Dummy arguments}
+Many verbs can also be made semantically intransitive with dummy arguments. The specific dummy arguments allowed depend on the verb\marginnote{Some verbs have multiple collocations for different senses.}, but in informal registers it's common to use generic ones instead.
+
+\begin{subexamples}
+	\ex
+		\script a Sems sapa.
+		\bits a sems sapa
+		\gloss 2 say:3 dog
+		\tr You're talking about dogs.
+	\ex
+		\script a Sems lar.
+		\bits a sems lar
+		\gloss 2 say:3 DMY
+		\tr You're talking.
+	\ex
+		\script Lar sems sapa.
+		\bits lar sems sapa
+		\gloss DMY say:3 dog
+		\tr There's talk about dogs.
+\end{subexamples}
+
+In informal registers, these verbs are often treated as syntactically intransitive. In such cases, the dummy noun is also phonologically eroded, a sign of increasing grammaticalization.
+
+\begin{example}
+	\script a Sémalr.
+	\bits a sem-a-lr
+	\gloss 2 say-2-DMY
+	\tr You're talkin'.
+\end{example}
+
+\paragraph{Bleached reflexive}
+A small number of verbs can be made intransitive via the reflexive.
+
+\begin{example}
+	\script a Segi.
+	\bits a segi
+	\gloss 2 say:REFL
+	\tr You're talking.
+\end{example}
+
+The reflexive as a devalency operation is only felicitous for a handful of verbs like \rz{sem} and \rz{sat}.
+
+\section{Nonfinite forms} \label{sec:nonfinite}
+Verbs have two nonfinite forms, an \emph{infinitive} and a \emph{participle}. The main difference is that infinitives are more noun-like, while participles are more adverb-like.
+
+\subsection{Infinitives}
+The infinitive is the unmarked citation form of the verb. It's commonly used in periphrastic constructions as the complement of a preposition.
+
+\begin{example}
+	\script ezzu sec Semsi rat m-ossat.
+	\bits ezzu sec semsi rat im=ossat
+	\gloss ASSC 3 want 1 to=grow
+	\tr They want me to grow up.
+\end{example}
+
+Although they are noun-like, infinitives cannot be arguments of verbs, only arguments of prepositions.
+
+\subsection{Participle}
+The participle form of a verb is used primarily as an adverb. The subordinated participle is an action that occurs simultaneously with the main clause. This is often used to mark manner of motion.
+
+\begin{example}
+	\script rat Satrs paltan ląittal.
+	\bits rat satrs paltan ląittal
+	\gloss 1 {go to} {the house} running
+	\tr I ran to the house.
+\end{example}
+
+The participle is marked with the suffix \rz{-tal}.
+
+Like the infinitive, the participle is common in periphrastic constructions, especially for reflexive verbs.
+
+\subsection{Argument omission} \label{sub:nonfinite_argument_omission}
+Both types of nonfinite verbs do not have fixed valence and can omit all arguments. In some periphrastic constructions, those arguments are still required by the new finite verb. However, other constructions, and general adjectival or adverbial use, often appear without overt arguments.
 
 \section{Negation}
-Negation can be handled in multiple ways. The typical method is a periphrastic construction with the verb \rz{rek}. Other methods include the use of discourse particles \dots
-
-\begin{kaobox}[frametitle=\sc todo:]
-	Write the section about which particles can convey negation, when, and how etc.
-\end{kaobox}
+Negation can be handled in multiple ways. The typical method is a periphrastic construction with the verb \rz{rek}.
 
 \section{Aspect and mood}
-\subsection{Perfective}
-The perfective construction uses the instransitive copula \rz{ot}, demoting the semantic verb to adjunct with the preposition \rz{tę}. The perfective can be used in any time frame, although by default it does have a past-time connotation.
-
-The perfective construction generally used for events that occured over a fixed time frame, especially when a duration is given. In contrast with an unmarked verb, the perfective emphasizes sequences of events or actions done a finite number of times.
+Aspect and mood are conveyed through periphrastic constructions or content words like certain adverbs.
 
 \subsection{Irrealis}
-The imperfective construction uses \rz{sem} “say, want,” demoting the semantic verb to adjunct with the preposition \rz{tę}. The irrealis can be used in any time frame, although by default it does have future-time connotation.
+The irrealis construction uses \rz{sem} “say, want,” demoting the semantic verb to adjunct with the preposition \rz{tę}. The irrealis can be used in any time frame, although by default it does have future-time connotation.
 
-The irrealis is used for all events that the speaker supposes might or might've occured. The construction is very general, and has broad semantic meaning---including conditional, jussive, and optative senses. In contrast with the unmarked verb, the irrealis emphasizes that the situation is not factual, but is hoped or posited to occur or have occured.
+\begin{example}
+	\script Rappahan semsi ecmalǫya sova t-portam.
+	\bits rappahan semsi ecmalǫya sova tę=portam
+	\gloss {the minister} should pants new to=try
+	\tr The minister should try on some new pants. 
+\end{example}
 
-\subsection{Subjunctive}
-The subjunctive construction uses \rz{nenat} “crouch,” demoting the semantic verb to adjunct with the preposition \rz{ah}. The subjunctive construction has a more limited scope than the \rz{sem} irrealis construction, typically expressing counterfactuals or doubt.
+The irrealis is used for all events that the speaker supposes should occur. Typically the expectation is deontic, although it can be epistemtic.\marginnote[*-2]{Deontic expectations come from morals, ideals, and desires, while epistemic expectations come from observations and inference.} The construction is very general, and has broad semantic meaning---including conditional, jussive, and optative senses.
