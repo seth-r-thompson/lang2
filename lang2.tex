@@ -1,7 +1,7 @@
 \documentclass[fontsize=12pt,twoside=false,numbers=noenddot]{class/kaobook}
 
 \usepackage[aligned, nojunctures, nochapters]{class/baarux}
-\usepackage[mcolblock,nostandards]{class/baabbrevs}
+\usepackage{class/baabbrevs}
 \usepackage{fontspec}
 \usepackage{booktabs}
 \usepackage{caption}
@@ -9,7 +9,7 @@
 \usepackage[utf8]{inputenc}
 
 %--- METADATA ---%
-\newcommand{\langname}{\textbf{lang₂}}
+\newcommand{\langname}{\textbf{Légatva}}
 \title[\langname{} Grammar]{\langname{}}
 \subtitle{a grammar of a constructed language}
 \author{kilenc}
@@ -40,9 +40,11 @@
 % shortcuts for common stuff
 \newcommand{\tsc}[1]{\textsc{#1}}
 \newcommand{\tit}[1]{\textit{#1}}
+\newcommand{\tbf}[1]{\textbf{#1}}
 \newcommand{\tbs}{\textbackslash}
 \newcommand{\ttd}{\char“~}
 \newcommand{\tss}[1]{\textsuperscript{#1}}
+\newcommand{\tin}{\-\hspace{1cm}}
 \renewcommand{\bf}{\bfseries}
 \renewcommand{\it}{\itshape}
 \renewcommand{\sc}{\scshape}
@@ -71,6 +73,14 @@
 \newcommand{\smoyd}[2]{(\href{#1}{5moyd \#\ignorespaces#2})}
 \newbaarulinetype{citation}{smoyd}{\footnotesize\sc\smoyd}
 
+% glossing abbreviations
+\baabbrev{kn}{Direct evidence}
+\baabbrev{un}{Indirect evidence}
+\baabbrev{cmn}{Common gender}
+\baabbrev{ntr}{Neuter gender}
+\baabbrev{dmy}{Dummy argument}
+\baabbrev{assc}{Associative plural}
+
 \begin{document}
 
 \frontmatter
@@ -79,7 +89,8 @@
 \begin{titlepage} \centering
 	\hspace{0pt} \vfill
 	{\huge \langname{} } \\\medbreak 
-	{\large \bf grammar of a constructed language} \\\bigbreak
+	{\large \bf grammar of a constructed language} \\
+	{\small and a torch for Anhi's relay}\\ \bigbreak
 	\includegraphics[width=0.25\linewidth]{lang2-lion.png} \\\bigbreak
 	{\large Seth Thompson \\ \small \emph{a.k.a.} kilenc} \\\bigbreak
 	{\small \today}
@@ -93,6 +104,43 @@
 \tableofcontents 
 
 \mainmatter
+
+\chapter{The Torch}
+\section{Passage}
+An excerpt from \rz{Paknan z-Helzzŕ}, a novel published a little over a decade ago following a great war. The author explores themes of feminist reclamation in postwar times.
+
+\begin{minipage}{164.6mm}
+\begin{quote} \rzc\it
+Yira ensaci Purrés. kai: \\
+\tin t-Zalmi mosac paknan a. \\
+\tin tęlr: a Ota t-pava. \\
+
+\tin tęlr: a Ota t-pava. kai: \\
+\tin t-Zalmi masetrs pakná rat. \\
+Gerraós segi. kai: \\
+\tin pakná ezzu rat pitóz. \\
+\tin t-Secya pava semrs rat m-rat z-mosat. \\
+
+Yira saci makra. kai: \\
+\tin t-kiray sec su segi otr rat. \\
+\tin a Semr rat t-ensal. raczr Kirayrs paknan halman u-pava. \\
+
+Purrés segi. kai: \\
+\tin a Anselrs rat. Pava rat z-tasisyan z-helns hatés. \\
+\tin Gerraós retasaci tasisyan. \\
+\tin tęlr: ezzu rat Rąssatki h-akvan. \\
+
+Gerraós saci makra. kai: \\
+\tin Segi t-kiray sezzr. \\
+\tin Segi t-ensal ezzu rat tevi su m-ratosat m-kiray. \\
+
+Yira vezamsi. kai: \\
+\tin t-Akvan ahkamr raczr; solr: Lar kirayrs raczr. \\
+\end{quote}
+\end{minipage}
+
+\section{Instructions}
+Consult the grammar and lexicon below. If you have any questions, feel free to DM me on Discord at \emph{kilenc\#9363}.
 
 \pagelayout{wide}
 \part{Introduction}
@@ -124,7 +172,7 @@
 
 \appendix
 
-\input{chapters/addendum.tex}
+% \input{chapters/addendum.tex}
 
 \input{chapters/lexicon.tex}
 
