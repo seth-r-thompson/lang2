@@ -1,7 +1,7 @@
 \documentclass[fontsize=12pt,twoside=false,numbers=noenddot]{class/kaobook}
 
 \usepackage[aligned, nojunctures, nochapters]{class/baarux}
-\usepackage[mcolblock,nostandards]{class/baabbrevs}
+\usepackage{class/baabbrevs}
 \usepackage{fontspec}
 \usepackage{booktabs}
 \usepackage{caption}
@@ -9,7 +9,7 @@
 \usepackage[utf8]{inputenc}
 
 %--- METADATA ---%
-\newcommand{\langname}{\textbf{lang₂}}
+\newcommand{\langname}{\textbf{Légatva}}
 \title[\langname{} Grammar]{\langname{}}
 \subtitle{a grammar of a constructed language}
 \author{kilenc}
@@ -40,9 +40,11 @@
 % shortcuts for common stuff
 \newcommand{\tsc}[1]{\textsc{#1}}
 \newcommand{\tit}[1]{\textit{#1}}
+\newcommand{\tbf}[1]{\textbf{#1}}
 \newcommand{\tbs}{\textbackslash}
 \newcommand{\ttd}{\char“~}
 \newcommand{\tss}[1]{\textsuperscript{#1}}
+\newcommand{\tin}{\-\hspace{1cm}}
 \renewcommand{\bf}{\bfseries}
 \renewcommand{\it}{\itshape}
 \renewcommand{\sc}{\scshape}
@@ -70,6 +72,14 @@
 
 \newcommand{\smoyd}[2]{(\href{#1}{5moyd \#\ignorespaces#2})}
 \newbaarulinetype{citation}{smoyd}{\footnotesize\sc\smoyd}
+
+% glossing abbreviations
+\baabbrev{kn}{Direct evidence}
+\baabbrev{un}{Indirect evidence}
+\baabbrev{cmn}{Common gender}
+\baabbrev{ntr}{Neuter gender}
+\baabbrev{dmy}{Dummy argument}
+\baabbrev{assc}{Associative plural}
 
 \begin{document}
 
@@ -124,7 +134,7 @@
 
 \appendix
 
-\input{chapters/addendum.tex}
+% \input{chapters/addendum.tex}
 
 \input{chapters/lexicon.tex}
 

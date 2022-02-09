@@ -16,7 +16,7 @@ As I develop this conlang, my goals will be to explore analytic constructions an
 \setchapterpreamble[u]{\margintoc}
 \chapter{Overview}
 \section{Typology}
-\langname{} is largely head-initial: verb phrases are broadly verb-object, noun phrases noun-modifier, and prepositional phrases preposition-complement. This pattern holds rather consistently throughout the language, but there are some exceptions, most notably a prominent focus-fronting system.\marginnote{Focus fronting is discussed further in §...}
+\langname{} is largely head-initial: verb phrases are broadly verb-object, noun phrases noun-modifier, and prepositional phrases preposition-complement. This pattern holds rather consistently throughout the language, but there are some exceptions, most notably a prominent focus-fronting system.\marginnote{Focus fronting is discussed further in §\ref{sec:fronting}.}
 
 There are five total word classes in \langname{}. Most content words are nouns and verbs, but there is a small, closed set of adjectives. Function words are prepositions and particles.
 
@@ -52,75 +52,61 @@ In a neutral transitive clause, the object follows the verb. Any other dependent
         \tr Auntie's looking for the dog on the beach.
 \end{examples}
 
-In some clauses that are more grammatically or informationally marked, other orders are found. Such orders are discussed further in §...
+In some clauses that are more grammatically or informationally marked, other orders are found. Such orders are discussed further in §\ref{sec:fronting}.
 
 \section{Morphology}
+Nouns inflect for number and evidence.\marginnote{The pragmatics of nominal evidentiality are discussed in §\ref{sec:evidence}.} Although the generic singular is the citation form, the direct evidence form is the most common in spoken or written corpuses.
 
-\begin{kaobox}[frametitle=\sc todo:]
-    Need to finalize the morphological forms etc etc. The main thing is figuring out stress patterns; might need to do some dreaded diachronics.
-\end{kaobox}
-
-Nouns inflect for number and deixis.\marginnote{Deixis is perhaps better characterized as nominal evidentiality; see §\ref{sec:deixis}.} Although the generic singular is the citation form, the proximal form is the most common in spoken or written corpuses.
+% Direct evidence is marked with the suffix -\rz{n}. Indirect evidence is marked by shifting stress to the final syllable. The plural is marked with the suffix -\rz{zr}.
 
 \begin{table}[h] \centering
     \begin{tabular}{c|ccc}
         \toprule
-        & \bf Generic & \bf Proximal & \bf Distal \\
+        & \bf Generic & \bf Direct & \bf Indirect \\
         \midrule
         \bf \sc sg & \it\rzc metka & \it\rzc metkan & \it\rzc matkó \\
-        \bf \sc pl & \it\rzc matkozr & \it\rzc matkonzr & \it\rzc metkazŕ \\
+        \bf \sc pl & \it\rzc matkozr & \it\rzc matkoznr & \it\rzc metkazŕ \\
         \bottomrule
     \end{tabular}
     \caption{Inflection of \rz{metka} “bowl”}
     \label{tab:inflect_noun}
 \end{table}
 
-\begin{kaobox}[frametitle=\sc todo:]
-    Maybe the plural is some sort of clitic, too...
-    Attaching at right edge of phrase, and after stuff like -\rz{n}, but still phonologically part of the word, so it gets distal stress.
-    
-    Or -\rz{n} attaches right after root---harder to diachronically justify, unless the plural is newer than the agreement. Maybe the plural is some kinda circumfix? -\rz{z} + -\rz{r}, where -\rz{n} attaches between?
-\end{kaobox}
-
-Modifiers agree with their head nouns for deixis. This includes adjectives (like \rz{ócaa}), appositive nouns (like \rz{mulkas}), and pronouns (like \rz{rat}).
+Modifiers agree with their head nouns for evidence. This includes adjectives (like \rz{ócaa}), appositive nouns (like \rz{mulkas}), and pronouns (like \rz{rat}).
 
 \begin{example}
     \script mavá ocaá mulkás rát
     \bits mavá ocaá mulkás rát
-    \gloss cat\tbs\tsc{dist} tall\tbs\tsc{dist} fur\tbs\tsc{dist} me\tbs\tsc{dist}
-    \tr my big fuzzy cat (I haven't met yet)
+    \gloss cat:UN tall:UN fur:UN me:UN
+    \tr my skinny fuzzy cat (I haven't met yet)
 \end{example}
 
-Verbs inflect for person and deictic agreement.
+Verbs inflect for person of subjects and objects. They also agree with the evidence of the subject.\marginnote[*-1]{The rules governing verbal marking are discussed in §\ref{sec:person_agreement} and §\ref{sec:evidence_agreement}.}
 
 \begin{table}[h] \centering
     \begin{tabular}{c|ccc}
         \toprule
         & \bf Generic & \bf Proximal & \bf Distal \\
         \midrule
-        \bf \sc 1.ag & \it\rzc kę́statr & \it\rzc kąstetri & \it\rzc kęstatŕ \\
-        \bf \sc 1 & \it\rzc kę́statrs & \it\rzc kęstatrci & \it\rzc kęstatŕs \\
-        \bf \sc 2 & \it\rzc kę́stata & \it\rzc kęstatai & \it\rzc kęstatá \\
+        \bf \sc 1.ag & \it\rzc kąstetr & \it\rzc kąstetri & \it\rzc kęstatŕ \\
+        \bf \sc 1.pt & \it\rzc kąstetrs & \it\rzc kąstetrci & \it\rzc kąstetŕs \\
+        \bf \sc 2 & \it\rzc kąsteta & \it\rzc kęstatai & \it\rzc kęstatá \\
         \bf \sc 3c & \it\rzc kęstac & \it\rzc kąsteci & \it\rzc kęstatés \\
         \bf \sc 3n & \it\rzc kęstacz & \it\rzc kąsteczi & \it\rzc kęstatóz \\
-        \bf \sc 3n:1 & \it\rzc késtatns & \it\rzc kęstatnsi & \it\rzc kęstatńs \\
-        \bf \sc refl & \it\rzc kę́statak & \it\rzc kęstatki & \it\rzc kęstaták \\
+        \bf \sc 3n:1 & \it\rzc kąstetns & \it\rzc kęstatnsi & \it\rzc kęstatńs \\
+        \bf \sc refl & \it\rzc kąstetak & \it\rzc kąstetki & \it\rzc kęstaták \\
         \bottomrule
     \end{tabular}
     \caption{Inflection of \rz{kęstat} “lead”}
     \label{tab:inflect_verb}
 \end{table}
 
-\begin{kaobox}[frametitle=\sc todo:]
-    Not sure if I like the initial stress for generic forms; maybe they just have regular stress rules.
-\end{kaobox}
-
-There are also two nonfinite forms, the bare infinitive and the converb.
+There are also two nonfinite verb forms, the bare infinitive and the participle. The infinitive is more noun-like, while the participle is more adverb-like.
 
 \begin{table}[h] \centering
     \begin{tabular}{cc}
         \toprule
-        \bf Bare & \bf Converb \\
+        \bf Bare & \bf Participle \\
         \midrule
         \it\rzc kęstat & \it\rzc kąstettal \\
         \bottomrule
@@ -128,3 +114,5 @@ There are also two nonfinite forms, the bare infinitive and the converb.
     \caption{Nonfinite forms of \rz{kęstat} “lead”}
     \label{tab:inflect_verb_nonfinite}
 \end{table}
+
+Both nominal and verbal marking patterns are largely agglunative, but surface forms may not always resemble their lemma due to morphophonological processes.
