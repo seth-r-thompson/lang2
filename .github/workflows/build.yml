@@ -6,19 +6,26 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  lexicon:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v2
+      - name: Checkout branch
+        uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4
         with: 
           python-version: 3.8
+      - name: Install modules
+        run: pip3 install requests
       - name: Generate lexicon file
         run: python3 gdoc_to_tex.py
         env:
           DOC_ID: ${{ secrets.DOC_ID }}
           TAB_ID: ${{ secrets.TAB_ID }}
-      - name: Build LaTeX
+  pdf:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Build LaTeX
         uses: xu-cheng/latex-action@v2
         with:
           root_file: lang2.tex
