@@ -6,6 +6,8 @@ on:
   workflow_dispatch:
 
 jobs:
+  strategy:
+    max-parallel: 1
   lexicon:
     runs-on: ubuntu-latest
     steps:
@@ -23,6 +25,8 @@ jobs:
           DOC_ID: ${{ secrets.DOC_ID }}
           TAB_ID: ${{ secrets.TAB_ID }}
   pdf:
+    strategy:
+      max-parallel: 1
     runs-on: ubuntu-latest
     steps:
       - name: Checkout branch
