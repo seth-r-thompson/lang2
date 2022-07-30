@@ -29,9 +29,8 @@ jobs:
     steps:
       - name: Update MiKTeX
         run: mpm --update-db
-      - run: -ls -a
       - name: Compile LaTeX
-        run: xelatex -synctex=1 -interaction=nonstopmode *.tex
+        run: xelatex *.tex
       - name: Upload PDF
         uses: actions/upload-artifact@v3
         with:
