@@ -23,7 +23,9 @@ jobs:
           DOC_ID: ${{ secrets.DOC_ID }}
           TAB_ID: ${{ secrets.TAB_ID }}
       - name: Install TeXlive
-        run: sudo apt-get update && sudo apt-get install texlive texlive-xetex texlive-science latexmk
+        run: |
+          sudo apt-get update && sudo apt-get install miktex latexmk
+          initexmf --set-config-value [MPM]AutoInstall=1
       - name: Compile LaTeX
         working-directory: .
         run: xelatex -synctex=1 -interaction=nonstopmode *.tex
