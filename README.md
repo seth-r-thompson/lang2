@@ -10,3 +10,5 @@ In this repository you can find:
 - a workflow script to continously build the PDF
 - a version of the [_Libertinus Sans_ font family](https://github.com/alerque/libertinus) that I modified to support more unicode characters
 - a version of the [_kaobook_ class](https://github.com/fmarotta/kaobook) that I modified slightly to support my use case
+
+To see the latest version of the grammar, go [here](https://github.com/seth-r-thompson/lang2/actions).
