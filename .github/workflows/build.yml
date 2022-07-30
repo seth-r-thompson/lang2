@@ -6,9 +6,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  strategy:
-    max-parallel: 1
   lexicon:
+    strategy:
+      max-parallel: 1
     runs-on: ubuntu-latest
     steps:
       - name: Checkout branch
