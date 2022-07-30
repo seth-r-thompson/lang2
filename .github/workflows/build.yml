@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  lexicon:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout branch
@@ -22,10 +22,11 @@ jobs:
         env:
           DOC_ID: ${{ secrets.DOC_ID }}
           TAB_ID: ${{ secrets.TAB_ID }}
-      - name: Install TeXlive
-        run: |
-          sudo apt-get update && sudo apt-get install miktex latexmk
-          initexmf --set-config-value [MPM]AutoInstall=1
+  pdf:
+    runs-on: ubuntu-latest
+    container: miktex/miktex
+    needs: lexicon
+    steps:
       - name: Compile LaTeX
         working-directory: .
         run: xelatex -synctex=1 -interaction=nonstopmode *.tex
