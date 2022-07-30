@@ -2,7 +2,7 @@ name: build
 
 on:
   push:
-    branches: [ "master", "github-automation" ]
+    branches: [ "master" ]
   workflow_dispatch:
 
 jobs:
