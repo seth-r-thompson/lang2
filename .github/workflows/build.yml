@@ -27,8 +27,13 @@ jobs:
     steps:
       - name: Checkout branch
         uses: actions/checkout@v3
-      - name: Build LaTeX
-        uses: xu-cheng/latex-action@v2
+      - name: Install TeXlive
+        run: sudo apt-get update && sudo apt-get install texlive latexmk
+      - name: Compile LaTeX
+        working-directory: .
+        run: xelatex -synctex=1 -interaction=nonstopmode *.tex
+      - name: Upload PDF
+        uses: actions/upload-artifact@v3
         with:
-          root_file: /lang2.tex
-          latexmk_use_xelatex: true
+          name: Grammar
+          path: lang2.pdf
