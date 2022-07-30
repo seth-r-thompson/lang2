@@ -27,6 +27,8 @@ jobs:
     container: miktex/miktex
     needs: lexicon
     steps:
+      - name: Checkout branch
+        uses: actions/checkout@v3
       - name: Update MiKTeX
         run: mpm --update-db
       - name: Compile LaTeX
