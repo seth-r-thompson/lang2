@@ -6,9 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  lexicon:
-    strategy:
-      max-parallel: 1
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout branch
@@ -24,13 +22,6 @@ jobs:
         env:
           DOC_ID: ${{ secrets.DOC_ID }}
           TAB_ID: ${{ secrets.TAB_ID }}
-  pdf:
-    strategy:
-      max-parallel: 1
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout branch
-        uses: actions/checkout@v3
       - name: Install TeXlive
         run: sudo apt-get update && sudo apt-get install texlive texlive-xetex latexmk
       - name: Compile LaTeX
