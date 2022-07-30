@@ -32,7 +32,7 @@ jobs:
       - name: Checkout branch
         uses: actions/checkout@v3
       - name: Install TeXlive
-        run: sudo apt-get update && sudo apt-get install texlive latexmk
+        run: sudo apt-get update && sudo apt-get install texlive texlive-xetex latexmk
       - name: Compile LaTeX
         working-directory: .
         run: xelatex -synctex=1 -interaction=nonstopmode *.tex
