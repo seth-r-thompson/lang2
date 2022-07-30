@@ -27,10 +27,11 @@ jobs:
     container: miktex/miktex
     needs: lexicon
     steps:
+      - name: Update MiKTeX
+        run: mpm --update-db
+      - run: -ls -a
       - name: Compile LaTeX
-        run: |
-          mpm --update-db
-          xelatex -synctex=1 -interaction=nonstopmode ./*.tex
+        run: xelatex -synctex=1 -interaction=nonstopmode *.tex
       - name: Upload PDF
         uses: actions/upload-artifact@v3
         with:
