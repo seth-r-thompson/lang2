@@ -1,9 +1,10 @@
+import os
 import csv
 import re
 import requests as req
 
-DOC_ID = # REDACTED
-TAB_ID = # REDACTED
+DOC_ID = os.environ["DOC_ID"]
+TAB_ID = os.environ["TAB_ID"]
 FILE_NAME = 'chapters/words.tex'
 
 # spreadsheet format
